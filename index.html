@@ -1,0 +1,4084 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Payments</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="icon"
+            href="https://paymentsway.co/wp-content/uploads/2021/05/Group-11.png"
+            sizes="32x32"
+        />
+
+        <link rel="stylesheet" href="./style.css" />
+        <link
+            rel="stylesheet"
+            href="//cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css"
+        />
+    </head>
+
+    <body class="body" id="body">
+        <header>
+            <figure class="header_itm header_itm1">
+                <img loading="lazy" src="./assets/icon/lbpw.svg" alt="" />
+            </figure>
+            <section class="header_itm header_itm2" id="moon">
+                <figure class="header_itm-icon" id="iconMove">
+                    <img
+                        loading="lazy"
+                        src="./assets/icon/moon.svg"
+                        alt=""
+                        id="iconChangeSun"
+                    />
+                </figure>
+            </section>
+            <section class="header_itm header_itm3" id="header_itm3">
+                <article class="header_menu" id="headerMenuOpen">
+                    <div class="header_menu-item" id="headerMenuItm1"></div>
+                    <div class="header_menu-item" id="headerMenuItm2"></div>
+                    <div class="header_menu-item" id="headerMenuItm3"></div>
+                </article>
+            </section>
+        </header>
+        <section class="menu menu_none" id="menu">
+            <article class="menu_header" onclick="changeActive(0)">
+                <p>INTRODUCCIÓN</p>
+                <div class="menu_header-line"></div>
+            </article>
+            <article class="menu_content">
+                <a
+                    href="#"
+                    class="menu_select-active here_idk"
+                    onclick="menu_select(0)"
+                    >Registro</a
+                >
+                <a href="#" class="menu_select-active" onclick="menu_select(1)"
+                    >Modos de Integraciones</a
+                >
+            </article>
+            <article class="menu_header" onclick="changeActive(1)">
+                <p>Consola</p>
+                <div class="menu_header-line"></div>
+            </article>
+            <article class="menu_content">
+                <a href="#" class="menu_select-active" onclick="menu_select(2)"
+                    >Creación de Botón de Pago</a
+                >
+            </article>
+            <article class="menu_header" onclick="changeActive(2)">
+                <p>
+                    INTEGRACIONES <br />
+                    Conexiones api (sandbox)
+                </p>
+                <div class="menu_header-line"></div>
+            </article>
+            <article class="menu_content">
+                <a
+                    href="#"
+                    class="menu_select-active"
+                    onclick="menu_select(3)"
+                ></a>
+                <a href="#" class="menu_select-active" onclick="menu_select(4)"
+                    >Obtener Listado de Bancos</a
+                >
+                <a href="#" class="menu_select-active" onclick="menu_select(5)"
+                    >Obtener Medios De Pago</a
+                >
+                <a href="#" class="menu_select-active" onclick="menu_select(6)"
+                    >Obtener Tipos Identificación
+                </a>
+                <a href="#" class="menu_select-active" onclick="menu_select(7)"
+                    >Obtener Transacción
+                </a>
+                <a href="#" class="menu_select-active" onclick="menu_select(8)"
+                    >Crear Transacción Tarjeta de Credito
+                </a>
+                <a href="#" class="menu_select-active" onclick="menu_select(9)"
+                    >Obtener Persona Por Documento
+                </a>
+                <a href="#" class="menu_select-active" onclick="menu_select(10)"
+                    >Tokenizar Tarjeta de Credito
+                </a>
+                <a href="#" class="menu_select-active" onclick="menu_select(11)"
+                    >Crear Transacción PSE
+                </a>
+                <a href="#" class="menu_select-active" onclick="menu_select(12)"
+                    >Crear Transacción Cash
+                </a>
+                <a href="#" class="menu_select-active" onclick="menu_select(24)"
+                    >Reversar transacción
+                </a>
+            </article>
+            <article class="menu_header" onclick="changeActive(3)">
+                <p>WEBCHECKOUT</p>
+                <div class="menu_header-line"></div>
+            </article>
+            <article class="menu_content">
+                <a
+                    href="#"
+                    class="menu_select-active"
+                    onclick="menu_select(130)"
+                    >Botón de pago</a
+                >
+                <a href="#" class="menu_select-active" onclick="menu_select(14)"
+                    >Botón de pagos Abiertos</a
+                >
+            </article>
+            <article class="menu_header" onclick="changeActive(4)">
+                <p>WIDGET</p>
+                <div class="menu_header-line"></div>
+            </article>
+            <article class="menu_content">
+                <a href="#" class="menu_select-active" onclick="menu_select(15)"
+                    >Implementación</a
+                >
+                <a href="#" class="menu_select-active" onclick="menu_select(16)"
+                    >Modo de uso
+                </a>
+            </article>
+            <article class="menu_header" onclick="changeActive(5)">
+                <p>COMPLEMENTOS DE COMERCIO</p>
+                <div class="menu_header-line"></div>
+            </article>
+            <article class="menu_content">
+                <a href="#" class="menu_select-active" onclick="menu_select(17)"
+                    >WooCommerce</a
+                >
+                <a href="#" class="menu_select-active" onclick="menu_select(18)"
+                    >PrestaShop</a
+                >
+            </article>
+        </section>
+        <main class="documentation">
+            <section class="documentation_itm documentation_itm1">
+                <h3 class="documentation_itm-title">INTRODUCCIÓN</h3>
+                <p class="documentation_itm-text">
+                    Para usar Payments Way, necesita realizar un registro, donde
+                    por correo electrónico le será suministrado el usuario y
+                    contraseña de ingreso a la pasarela de pago. Si no tiene una
+                    cuenta en Payments, puede registrarse para obtener sus
+                    credenciales e iniciar a integrar su negocio.
+                </p>
+                <h4 class="documentation_itm-subtitle">REGISTRO A PAYMENTS</h4>
+                <p class="documentation_itm-text">
+                    Crear registro de comercio o persona
+                </p>
+                <div class="documentation_father-idk">
+                    <div class="documentation_doble">
+                        <figure
+                            class="documentation_doble-figure1 figure_documentation"
+                            id="openNaturalPerson"
+                        >
+                            <i class="fa-solid fa-user-astronaut"></i>
+                        </figure>
+                        <figure
+                            class="documentation_doble-figure2 figure_documentation"
+                            id="legalPersonOpen"
+                        >
+                            <i class="fa-solid fa-business-time"></i>
+                        </figure>
+                    </div>
+                    <div class="documentation_doble-text">
+                        <div
+                            class="documentation_doble-text-c"
+                            id="openNaturalPerson2"
+                        >
+                            <h4>Persona natural</h4>
+                        </div>
+                        <div
+                            class="documentation_doble-text-c"
+                            id="legalPersonOpen2"
+                        >
+                            <h4>Persona jurídica o empresas</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="legalPerson none" id="legalPerson">
+                    <div class="documentation_itm-line"></div>
+                    <h4 class="documentation_itm-subtitle">
+                        REGISTRO PARA PERSONA JURÍDICA
+                    </h4>
+                    <ol class="register_space space">
+                        <li>Ingreso al Link para generar registro</li>
+                        <li>
+                            Diligenciar el Formulario de vinculación de comercio
+                            electrónico para persona jurídica.
+                        </li>
+                        <li>Información para tener en cuenta:</li>
+                        <ul class="register_space1">
+                            <ul>
+                                <li>
+                                    Información Básica de la Empresa a
+                                    registrar..
+                                </li>
+                                <li>
+                                    Información Sobre el Representante legal.
+                                </li>
+                                <li>Información de Estados Financieros.</li>
+                            </ul>
+                        </ul>
+                        <li>Documentos</li>
+                        <ul class="register_space2">
+                            <li>RUT de la empresa</li>
+                            <li>Cámara de Comercio (No mayor a 30 Días)</li>
+                            <li>Certificación Bancaria</li>
+                            <li>
+                                Documento de identidad del Representante Legal
+                            </li>
+                        </ul>
+                    </ol>
+                    <figure
+                        class="figure_documentation figure_documentation-img1"
+                    >
+                        <img
+                            loading="lazy"
+                            src="./assets/img/PersonaJuridica.png "
+                            alt=""
+                            class="largeImages"
+                        />
+                    </figure>
+                    <i class="center_i space">
+                        Una vez aprobado por nuestra área de cumplimiento, en su
+                        correo le será notificado las credenciales de ingreso
+                        para la pasarela de pagos Payments.
+                    </i>
+                    <div class="div_especial1">
+                        <a
+                            href="https://merchant.paymentsway.co/registro-persona-juridica"
+                            target="_blank"
+                        >
+                            <button>
+                                <i class="fa-solid fa-link"></i>Registrate aquí
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div class="naturalPerson none" id="naturalPerson">
+                    <div class="documentation_itm-line"></div>
+                    <h4 class="documentation_itm-subtitle">
+                        REGISTRO PARA PERSONA NATURAL
+                    </h4>
+                    <ol class="register_space space">
+                        <li>Ingreso al Link para generar registro</li>
+                        <li>
+                            Diligenciar el Formulario de vinculación de comercio
+                            electrónico para persona Natural.
+                        </li>
+                        <li>Información para tener en cuenta:</li>
+                        <ul class="register_space1">
+                            <li>Información personal completa.</li>
+                            <li>Información financiera.</li>
+                        </ul>
+                        <li>Documentos:</li>
+                        <ul class="register_space1">
+                            <li>RUT</li>
+                            <li>Certificación bancaria</li>
+                            <li>Documento de identidad.</li>
+                        </ul>
+                    </ol>
+
+                    <figure
+                        class="figure_documentation figure_documentation-img1"
+                    >
+                        <img
+                            loading="lazy"
+                            src="./assets/img/legalPerson.png"
+                            alt=""
+                        />
+                    </figure>
+                    <i class="center_i space">
+                        Una vez aprobado por nuestra área de cumplimiento, en su
+                        correo le será notificado las credenciales de ingreso
+                        para la pasarela de pagos Payments.
+                    </i>
+                    <div class="div_especial1">
+                        <a
+                            href="https://merchant.paymentsway.co/registro-persona-natural"
+                            target="_blank"
+                        >
+                            <button>
+                                <i class="fa-solid fa-link"></i>Registrate aquí
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section class="documentation_itm none documentation_itm1">
+                <h3 class="documentation_itm-title">INTEGRACIONES</h3>
+                <p class="documentation_itm-text">
+                    Con Payments tienes tres formas diferentes de integrar
+                    nuestra pasarela a su E-commerce o pagina web. A
+                    continuación encontrarás un resumen de
+                </p>
+                <h4 class="documentation_itm-subtitle">WIDGET</h4>
+                <figure>
+                    <img
+                        loading="lazy"
+                        src="/assets/img/widget.png"
+                        alt=""
+                        class="figure_documentation largeImages"
+                    />
+                </figure>
+                <p class="space">
+                    Con solo unas pocas líneas de código HTML, integre nuestro
+                    widget de pagos, permitiendo que sus clientes paguen sin
+                    salir de su sitio.
+                </p>
+                <h4 class="documentation_itm-subtitle">PAGO WEB CHECKOUT</h4>
+                <figure>
+                    <img
+                        loading="lazy"
+                        src="/assets/img/web-chekout.png"
+                        alt=""
+                        class="figure_documentation figure_documentation-web-chekout largeImages"
+                    />
+                </figure>
+                <p class="space">
+                    La consola de Payments te permite También utilizar un
+                    formulario HTML normal para redirigir a sus clientes a
+                    nuestro Web Checkout seguro .
+                </p>
+                <h4 class="documentation_itm-subtitle">
+                    COMPLEMENTOS PARA CMS
+                </h4>
+                <p>Acepte pagos en su tienda online en segundos.</p>
+                <br />
+
+                <p>
+                    Ahora puede aceptar pagos en su tienda en línea, utilizando
+                    nuestros complementos de comercio electrónico.
+                </p>
+            </section>
+            <section class="documentation_itm none documentation_itm1">
+                <h3 class="documentation_itm-title">Botones de pago</h3>
+                <ul class="register_space1">
+                    <li class="register_space_especial-button">
+                        Para el correcto acceso a la consola de Payments Way,
+                        usted deberá ingresar con su usuario y contraseña, el
+                        cual fue enviado a su correo electrónico.
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/ingreso.png"
+                            alt=""
+                            class="figure_documentation largeImages"
+                        />
+                    </figure>
+                    <li>
+                        Una vez haya ingresado a nuestra plataforma, se re
+                        direccionará al “Botón de pagos”.
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/boton.png"
+                            alt=""
+                            class="figure_documentation largeImages"
+                        />
+                    </figure>
+                    <li>Creara el botón de pago para el comercio/persona.</li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/creart-boton.png"
+                            alt=""
+                            class="figure_documentation largeImages"
+                        />
+                    </figure>
+                </ul>
+                <p class="text_especial-d">
+                    Para conocer mas sobre la creación de Botón de pagos, haz
+                    click aquí:
+                </p>
+                <article class="button_redirect">
+                    <figure onclick="menu_select(13, 1)">
+                        <a href="#">
+                            <img loading="lazy" src="./assets/img/pagos.png" />
+                        </a>
+                    </figure>
+                    <figure onclick="menu_select(14, 1)">
+                        <a href="#">
+                            <img
+                                loading="lazy"
+                                src="./assets/img/pagos-abiertos.png"
+                                alt=""
+                            />
+                        </a>
+                    </figure>
+                    <p>Botón de pago</p>
+                    <p>Botón de pagos abiertos</p>
+                </article>
+            </section>
+            <section class="documentation_itm none documentation_itm1">
+                <h3 class="documentation_itm-title">Paymerchant API</h3>
+            </section>
+            <section class="documentation_itm none documentation_itm1">
+                <h3 class="documentation_itm-title">
+                    <span class="method method_get">GET</span> Obtener Listado
+                    de Bancos
+                </h3>
+                <pre class="code">
+&nbsp;http://rationalsoftware.ddns.net:3008/ClientAPI/ObtenerListadoBancos</pre
+                >
+                <h4 class="documentation_itm-subtitle">
+                    Ejemplo de la petición
+                </h4>
+                <pre class="code">
+<span class="code_blue">var</span> myHeaders = <span class="code_blue"> new </span> Headers();
+myHeaders.<span class="code_yellow">append</span> (<span class="code_green">"Authorization"</span>, <span class="code_green"></span>);
+
+<span class="code_blue">var</span>  requestOptions = {
+  method: <span class="code_green">'GET'</span>,
+  headers: myHeaders,
+  redirect: <span class="code_green">'follow'</span>
+};
+
+<span class="code_yellow">fetch</span>(<span class="code_green">"http://rationalsoftware.ddns.net:3008/ClientAPI/ObtenerListadoBancos"</span>, requestOptions)
+  <span class="code_yellow">.then</span>(response => response<span class="code_yellow">.text</span>())
+  <span class="code_yellow">.then</span>(result => console<span class="code_yellow">.log</span>(result))
+  <span class="code_yellow">.catch</span>(error => console<span class="code_yellow">.log</span>(<span class="code_green">'error'</span>, error));</pre>
+            </section>
+            <section class="documentation_itm none documentation_itm1">
+                <h3 class="documentation_itm-title">
+                    <span class="method method_get">GET</span> Obtener Medios De
+                    Pago
+                </h3>
+                <pre class="code">
+&nbsp; http://rationalsoftware.ddns.net:3008/ClientAPI/ObtenerMediosDePago</pre
+                >
+                <h4 class="documentation_itm-subtitle">Headers</h4>
+                <p>
+                    Para consumir el servicio "obtener los medios de pago"
+                    necesitaremos en el
+                    <i class="code_style">&nbsp;&nbsp;header&nbsp;&nbsp;</i>
+                    de la petición su
+                    <i class="code_style">&nbsp;&nbsp;Api_key&nbsp;&nbsp; </i>
+                </p>
+
+                <h4 class="documentation_itm-subtitle">
+                    Ejemplo de la petición
+                </h4>
+                <pre class="code">
+<span class="code_blue">var</span> myHeaders = <span class="code_blue"> new </span> Headers();
+myHeaders.<span class="code_yellow">append</span> (<span class="code_green">"Authorization"</span>, <span class="code_green">"Api_key"</span>);
+
+<span class="code_blue">var</span>  requestOptions = {
+  method: <span class="code_green">'GET'</span>,
+  headers: myHeaders,
+  redirect: <span class="code_green">'follow'</span>
+};
+
+<span class="code_yellow">fetch</span>(<span class="code_green">"http://rationalsoftware.ddns.net:3008/ClientAPI/ObtenerMediosDePago"</span>, requestOptions)
+  <span class="code_yellow">.then</span>(response => response<span class="code_yellow">.text</span>())
+  <span class="code_yellow">.then</span>(result => console<span class="code_yellow">.log</span>(result))
+  <span class="code_yellow">.catch</span>(error => console<span class="code_yellow">.log</span>(<span class="code_green">'error'</span>, error));</pre>
+            </section>
+            <section class="documentation_itm none documentation_itm1">
+                <h3 class="documentation_itm-title">
+                    <span class="method method_get">GET</span> Obtener Tipos
+                    Identificación
+                </h3>
+                <pre class="code">
+&nbsp; http://rationalsoftware.ddns.net:3008/ClientAPI/ObtenerTiposIdentificacion</pre
+                >
+                <h4 class="documentation_itm-subtitle">Headers</h4>
+                <p>
+                    Para consumir el servicio "obtener tipos identificación"
+                    necesitaremos en el
+                    <i class="code_style">&nbsp;&nbsp;header&nbsp;&nbsp;</i>
+                    de la petición su
+                    <i class="code_style">&nbsp;&nbsp;Api_key&nbsp;&nbsp; </i>
+                </p>
+
+                <h4 class="documentation_itm-subtitle">
+                    Ejemplo de la petición
+                </h4>
+                <pre class="code">
+<span class="code_blue">var</span> myHeaders = <span class="code_blue"> new </span> Headers();
+myHeaders.<span class="code_yellow">append</span> (<span class="code_green">"Authorization"</span>, <span class="code_green">"Api_key"</span>);
+
+<span class="code_blue">var</span>  requestOptions = {
+  method: <span class="code_green">'GET'</span>,
+  headers: myHeaders,
+  redirect: <span class="code_green">'follow'</span>
+};
+
+<span class="code_yellow">fetch</span>(<span class="code_green">"http://rationalsoftware.ddns.net:3008/ClientAPI/ObtenerTiposIdentificacion"</span>, requestOptions)
+  <span class="code_yellow">.then</span>(response => response<span class="code_yellow">.text</span>())
+  <span class="code_yellow">.then</span>(result => console<span class="code_yellow">.log</span>(result))
+  <span class="code_yellow">.catch</span>(error => console<span class="code_yellow">.log</span>(<span class="code_green">'error'</span>, error));</pre>
+            </section>
+
+            <section class="documentation_itm none documentation_itm1">
+                <h3 class="documentation_itm-title">
+                    <span class="method method_get">GET</span> Obtener
+                    Transacción
+                </h3>
+                <pre class="code">
+&nbsp; https://merchant.paymentsway.co/api/external/v1/getbyexternal/?x-api-key=</pre
+                >
+                <h4 class="documentation_itm-subtitle">Headers</h4>
+                <p>
+                    Para consumir el servicio "obtener transacción"
+                    necesitaremos en el
+                    <i class="code_style">&nbsp;&nbsp;header&nbsp;&nbsp;</i>
+                    de la petición su
+                    <i class="code_style">&nbsp;&nbsp;Api_key&nbsp;&nbsp; </i>
+                </p>
+
+                <h4 class="documentation_itm-subtitle">
+                    Ejemplo de la petición
+                </h4>
+                <pre class="code">
+<span class="code_blue">var</span> myHeaders = <span class="code_blue"> new </span> Headers();
+myHeaders.<span class="code_yellow">append</span> (<span class="code_green">"x-api-key"</span>, <span class="code_green">"Api_key"</span>);
+
+<span class="code_blue">var</span>  requestOptions = {
+  method: <span class="code_green">'GET'</span>,
+  headers: myHeaders,
+  redirect: <span class="code_green">'follow'</span>
+};
+
+<span class="code_yellow">fetch</span>(<span class="code_green">"https://merchant.paymentsway.co/api/external/v1/getbyexternal/?x-api-key="</span>, requestOptions)
+  <span class="code_yellow">.then</span>(response => response<span class="code_yellow">.text</span>())
+  <span class="code_yellow">.then</span>(result => console<span class="code_yellow">.log</span>(result))
+  <span class="code_yellow">.catch</span>(error => console<span class="code_yellow">.log</span>(<span class="code_green">'error'</span>, error));</pre>
+            </section>
+
+            <section class="documentation_itm none documentation_itm1">
+                <h3 class="documentation_itm-title">
+                    <span class="method method_post">POST</span> Crear
+                    Transaccion Tarjeta de Crédito
+                </h3>
+                <pre class="code">
+&nbsp;http://rationalsoftware.ddns.net:3008/ClientAPI/CrearTransaccionTC</pre
+                >
+                <h4 class="documentation_itm-subtitle">Headers</h4>
+                <p>
+                    Para consumir el servicio de "crear transacción tarjeta de
+                    crédito" necesitaremos en el
+                    <i class="code_style">&nbsp;&nbsp;header&nbsp;&nbsp;</i>
+                    de la petición su
+                    <i class="code_style">&nbsp;&nbsp;Api_key&nbsp;&nbsp; </i>
+                </p>
+                <h4 class="documentation_itm-subtitle">Parametrización</h4>
+                <table id="cttc">
+                    <thead>
+                        <tr>
+                            <th><strong>Campo</strong></th>
+                            <th><strong>Tipo</strong></th>
+                            <th><strong>Descripción</strong></th>
+                            <th><strong>Requerido</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>amount</td>
+                            <td>integer</td>
+                            <td>Valor del pago</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>firstname</td>
+                            <td>string</td>
+                            <td>Nomres del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>lastname</td>
+                            <td>string</td>
+                            <td>Apellidos del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>card_identification</td>
+                            <td>string</td>
+                            <td>Identificacion del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>identification_type</td>
+                            <td>Integer</td>
+                            <td>Tipo de identificacion del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>card_holder</td>
+                            <td>string</td>
+                            <td>Nombre Completo como aparece en la TC</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>card_pan</td>
+                            <td>string</td>
+                            <td>Numero de la TC</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>card_pan</td>
+                            <td>string</td>
+                            <td>Numero de la TC sin espacios ni guiones</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>card_expiry_year</td>
+                            <td>string</td>
+                            <td>Año de expiracion de la TC</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>card_expiry_month</td>
+                            <td>string</td>
+                            <td>Mes de expiracion de la TC</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>card_cvv</td>
+                            <td>string</td>
+                            <td>CVV de la TC</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>url_ok</td>
+                            <td>string</td>
+                            <td>CVV de la TC</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td>url_ko</td>
+                            <td>string</td>
+                            <td>CVV de la TC</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td>description</td>
+                            <td>string</td>
+                            <td>Descripción brebe de la orden</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>installments</td>
+                            <td>integer</td>
+                            <td>Numero de Cuotas</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>external_order</td>
+                            <td>string</td>
+                            <td>Identificador unico del lado del comercio</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>dynamic_descriptor</td>
+                            <td>string</td>
+                            <td>Descripción brebe de la orden</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>terminal_id</td>
+                            <td>integer</td>
+                            <td>Id de la terminal</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>form_id</td>
+                            <td>integer</td>
+                            <td>Id del formulario</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>ip</td>
+                            <td>string</td>
+                            <td>Numero de IP del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>additionalData</td>
+                            <td>Object</td>
+                            <td>
+                                Objeto con informacion adicional que se
+                                retornara en el webhook
+                            </td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>autorizacionDatos</td>
+                            <td>boolean</td>
+                            <td>
+                                Indica si el pagador autoriza el uso de datos
+                                para tokenizar su tarjeta
+                            </td>
+                            <td>Si</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 class="documentation_itm-subtitle">
+                    Cuerpo de la peticion
+                </h4>
+                <p>
+                    Para consumir el servicio "crear transacción tarjeta de
+                    credito" en el
+                    <i class="code_style">&nbsp;&nbsp;body&nbsp;&nbsp;</i> de la
+                    petición colocara los siguientes datos:
+                </p>
+                <pre class="code">
+{
+        <span class="code_green">"amount"</span> : <span class="code_red">300000</span>,
+        <span class="code_green">"firstname"</span> : <span class="code_green">"LEONARDO"</span>,
+        <span class="code_green">"lastname"</span> : <span class="code_green">"CUBILLOS SANCHEZ"</span>,
+        <span class="code_green">"card_identification"</span> : <span class="code_green">"79841648"</span>,
+        <span class="code_green">"identification_type"</span> : <span class="code_red">4</span>,
+        <span class="code_green">"card_holder"</span> : <span class="code_green">"PEPITO PEREZ PA"</span>,
+        <span class="code_green">"card_pan"</span> : <span class="code_green">"411111111111"</span>,
+        <span class="code_green">"card_expiry_year"</span> : <span class="code_green">"26"</span>,
+        <span class="code_green">"card_expiry_month"</span> : <span class="code_green">"06"</span>,
+        <span class="code_green">"card_cvv"</span> : <span class="code_green">"123"</span>,
+        <span class="code_green">"url_ok"</span> : <span class="code_green">"https://mysite.com/payment/success"</span>,
+        <span class="code_green">"url_ko"</span> : <span class="code_green">"https://mysite.com/payment/error"</span>,
+        <span class="code_green">"description"</span> : <span class="code_green">"order's description test"</span>,
+        <span class="code_green">"installments"</span> : <span class="code_red">3</span>,
+        <span class="code_green">"external_order"</span> : <span class="code_green">"trc231566" </span>,
+        <span class="code_green">"dynamic_descriptor"</span> : <span class="code_green">"Prueba PayLands"</span>,
+        <span class="code_green">"terminal_id"</span> : <span class="code_red">34</span>,
+        <span class="code_green">"form_id"</span> : <span class="code_red">34</span>,
+        <span class="code_green">"ip"</span> : <span class="code_green">"192.168.0.1"</span>,
+        <span class="code_green">"additionalData"</span> : {
+            <span class="code_green">"CualquierCosa"</span> : <span class="code_green">"Cualquiecosa"  </span> 
+        },
+        <span class="code_green">"autorizacionDatos"</span> : <span class="code_red">true</span>
+}
+</pre>
+                <h4 class="documentation_itm-subtitle">
+                    Ejemplo de la petición
+                </h4>
+                <pre class="code">
+<span class="code_blue">var</span> myHeaders = <span class="code_blue"> new </span> Headers();
+myHeaders.<span class="code_yellow">append</span> (<span class="code_green">"x-api-key"</span>, <span class="code_green">"Api_key"</span>);
+
+<span class="code_blue">var</span> cuerpo = {
+    <span class="code_green">"amount"</span> : <span class="code_red">300000</span>,
+    <span class="code_green">"firstname"</span> : <span class="code_green">"LEONARDO"</span>,
+    <span class="code_green">"lastname"</span> : <span class="code_green">"CUBILLOS SANCHEZ"</span>,
+    <span class="code_green">"card_identification"</span> : <span class="code_green">"79841648"</span>,
+    <span class="code_green">"identification_type"</span> : <span class="code_red">4</span>,
+    <span class="code_green">"card_holder"</span> : <span class="code_green">"PEPITO PEREZ PA"</span>,
+    <span class="code_green">"card_pan"</span> : <span class="code_green">"411111111111"</span>,
+    <span class="code_green">"card_expiry_year"</span> : <span class="code_green">"26"</span>,
+    <span class="code_green">"card_expiry_month"</span> : <span class="code_green">"06"</span>,
+    <span class="code_green">"card_cvv"</span> : <span class="code_green">"123"</span>,
+    <span class="code_green">"url_ok"</span> : <span class="code_green">"https://mysite.com/payment/success"</span>,
+    <span class="code_green">"url_ko"</span> : <span class="code_green">"https://mysite.com/payment/error"</span>,
+    <span class="code_green">"description"</span> : <span class="code_green">"order's description test"</span>,
+    <span class="code_green">"installments"</span> : <span class="code_red">3</span>,
+    <span class="code_green">"external_order"</span> : <span class="code_green">"trc231566" </span>,
+    <span class="code_green">"dynamic_descriptor"</span> : <span class="code_green">"Prueba PayLands"</span>,
+    <span class="code_green">"terminal_id"</span> : <span class="code_red">34</span>,
+    <span class="code_green">"form_id"</span> : <span class="code_red">34</span>,
+    <span class="code_green">"ip"</span> : <span class="code_green">"192.168.0.1"</span>,
+    <span class="code_green">"additionalData"</span> : {
+        <span class="code_green">"CualquierCosa"</span> : <span class="code_green">"Cualquiecosa"  </span> 
+    },
+    <span class="code_green">"autorizacionDatos"</span> : <span class="code_red">true</span>
+}
+
+<span class="code_blue">var</span>  requestOptions = {
+  method: <span class="code_green">'POST'</span>,
+  headers: myHeaders,
+  body: cuerpo
+  redirect: <span class="code_green">'follow'</span>
+};
+
+<span class="code_yellow">fetch</span>(<span class="code_green">"http://rationalsoftware.ddns.net:3008/ClientAPI/CrearTransaccionTC"</span>, requestOptions)
+  <span class="code_yellow">.then</span>(response => response<span class="code_yellow">.text</span>())
+  <span class="code_yellow">.then</span>(result => console<span class="code_yellow">.log</span>(result))
+  <span class="code_yellow">.catch</span>(error => console<span class="code_yellow">.log</span>(<span class="code_green">'error'</span>, error));</pre>
+            </section>
+
+            <section class="documentation_itm none documentation_itm1">
+                <h3 class="documentation_itm-title">
+                    <span class="method method_post">POST</span> Obtener Persona
+                    Por Documento
+                </h3>
+                <pre class="code">
+&nbsp;http://rationalsoftware.ddns.net:3008/ClientAPI/ObtenerPersonaPorDocumento</pre
+                >
+                <h4 class="documentation_itm-subtitle">Headers</h4>
+                <p>
+                    Para consumir el servicio de "obtener persona por documento"
+                    necesitaremos en el
+                    <i class="code_style">&nbsp;&nbsp;header&nbsp;&nbsp;</i>
+                    de la petición su
+                    <i class="code_style">&nbsp;&nbsp;Api_key&nbsp;&nbsp; </i>
+                </p>
+                <h4 class="documentation_itm-subtitle">Parametrización</h4>
+                <table id="opd">
+                    <thead>
+                        <tr>
+                            <th><strong>Campo</strong></th>
+                            <th><strong>Tipo</strong></th>
+                            <th><strong>Descripción</strong></th>
+                            <th><strong>Requerido</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>amount</td>
+                            <td>integer</td>
+                            <td>Valor del pago</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>firstname</td>
+                            <td>string</td>
+                            <td>Nomres del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>lastname</td>
+                            <td>string</td>
+                            <td>Apellidos del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>card_identification</td>
+                            <td>string</td>
+                            <td>Identificacion del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>identification_type</td>
+                            <td>Integer</td>
+                            <td>Tipo de identificacion del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>card_holder</td>
+                            <td>string</td>
+                            <td>Nombre Completo como aparece en la TC</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>card_pan</td>
+                            <td>string</td>
+                            <td>Numero de la TC</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>card_pan</td>
+                            <td>string</td>
+                            <td>Numero de la TC sin espacios ni guiones</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>card_expiry_year</td>
+                            <td>string</td>
+                            <td>Año de expiracion de la TC</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>card_expiry_month</td>
+                            <td>string</td>
+                            <td>Mes de expiracion de la TC</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>card_cvv</td>
+                            <td>string</td>
+                            <td>CVV de la TC</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>url_ok</td>
+                            <td>string</td>
+                            <td>CVV de la TC</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td>url_ko</td>
+                            <td>string</td>
+                            <td>CVV de la TC</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td>description</td>
+                            <td>string</td>
+                            <td>Descripción brebe de la orden</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>installments</td>
+                            <td>integer</td>
+                            <td>Numero de Cuotas</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>external_order</td>
+                            <td>string</td>
+                            <td>Identificador unico del lado del comercio</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>dynamic_descriptor</td>
+                            <td>string</td>
+                            <td>Descripción brebe de la orden</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>terminal_id</td>
+                            <td>integer</td>
+                            <td>Id de la terminal</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>form_id</td>
+                            <td>integer</td>
+                            <td>Id del formulario</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>ip</td>
+                            <td>string</td>
+                            <td>Numero de IP del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>additionalData</td>
+                            <td>Object</td>
+                            <td>
+                                Objeto con informacion adicional que se
+                                retornara en el webhook
+                            </td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>autorizacionDatos</td>
+                            <td>boolean</td>
+                            <td>
+                                Indica si el pagador autoriza el uso de datos
+                                para tokenizar su tarjeta
+                            </td>
+                            <td>Si</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 class="documentation_itm-subtitle">
+                    Cuerpo de la peticion
+                </h4>
+                <p>
+                    Para consumir el servicio "obtener persona por documento" en
+                    el
+                    <i class="code_style">&nbsp;&nbsp;body&nbsp;&nbsp;</i> de la
+                    petición colocara los siguientes datos:
+                </p>
+                <pre class="code">
+{
+        <span class="code_green">"nroDocumento"</span> : <span class="code_red">1012427594</span>,
+}
+</pre>
+                <h4 class="documentation_itm-subtitle">
+                    Ejemplo de la petición
+                </h4>
+                <pre class="code">
+<span class="code_blue">var</span> myHeaders = <span class="code_blue"> new </span> Headers();
+myHeaders.<span class="code_yellow">append</span> (<span class="code_green">"x-api-key"</span>, <span class="code_green">"Api_key"</span>);
+
+<span class="code_blue">var</span> cuerpo = {
+    <span class="code_green">"nroDocumento"</span> : <span class="code_red">1012427594</span>,
+}
+
+<span class="code_blue">var</span>  requestOptions = {
+  method: <span class="code_green">'POST'</span>,
+  headers: myHeaders,
+  body: cuerpo
+  redirect: <span class="code_green">'follow'</span>
+};
+
+<span class="code_yellow">fetch</span>(<span class="code_green">"http://rationalsoftware.ddns.net:3008/ClientAPI/ObtenerPersonaPorDocumento"</span>, requestOptions)
+  <span class="code_yellow">.then</span>(response => response<span class="code_yellow">.text</span>())
+  <span class="code_yellow">.then</span>(result => console<span class="code_yellow">.log</span>(result))
+  <span class="code_yellow">.catch</span>(error => console<span class="code_yellow">.log</span>(<span class="code_green">'error'</span>, error));</pre>
+            </section>
+
+            <section class="documentation_itm none documentation_itm1">
+                <h3 class="documentation_itm-title">
+                    <span class="method method_post">POST</span> Tokenizar
+                    Tarjeta de Crédito
+                </h3>
+                <pre class="code">
+&nbsp;http://rationalsoftware.ddns.net:3008/ClientAPI/TokenizarTarjeta</pre
+                >
+                <h4 class="documentation_itm-subtitle">Headers</h4>
+                <p>
+                    Para consumir el servicio de "tokenizar tarjeta de crédito"
+                    necesitaremos en el
+                    <i class="code_style">&nbsp;&nbsp;header&nbsp;&nbsp;</i>
+                    de la petición su
+                    <i class="code_style">&nbsp;&nbsp;Api_key&nbsp;&nbsp; </i>
+                </p>
+                <h4 class="documentation_itm-subtitle">Parametrización</h4>
+                <table id="ttc">
+                    <thead>
+                        <tr>
+                            <th><strong>Campo</strong></th>
+                            <th><strong>Tipo</strong></th>
+                            <th><strong>Descripción</strong></th>
+                            <th><strong>Requerido</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>firstname</td>
+                            <td>string</td>
+                            <td>Nomres del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>lastname</td>
+                            <td>string</td>
+                            <td>Apellidos del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>card_identification</td>
+                            <td>string</td>
+                            <td>Identificacion del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>identification_type</td>
+                            <td>Integer</td>
+                            <td>Tipo de identificacion del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>Correo</td>
+                            <td>string</td>
+                            <td>Email del Pagador</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td>Celular</td>
+                            <td>string</td>
+                            <td>Celular del Pagador</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td>Direccion</td>
+                            <td>string</td>
+                            <td>Direccion del Pagador</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td>card_holder</td>
+                            <td>string</td>
+                            <td>Nombre Completo como aparece en la TC</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>card_pan</td>
+                            <td>string</td>
+                            <td>Numero de la TC</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>card_pan</td>
+                            <td>string</td>
+                            <td>Numero de la TC sin espacios ni guiones</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>card_expiry_year</td>
+                            <td>string</td>
+                            <td>Año de expiracion de la TC</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>card_expiry_month</td>
+                            <td>string</td>
+                            <td>Mes de expiracion de la TC</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>card_cvv</td>
+                            <td>string</td>
+                            <td>CVV de la TC</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>terminal_id</td>
+                            <td>integer</td>
+                            <td>Id de la terminal</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>autorizacionDatos</td>
+                            <td>boolean</td>
+                            <td>
+                                Indica si el pagador autoriza el uso de datos
+                                para tokenizar su tarjeta
+                            </td>
+                            <td>Si</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 class="documentation_itm-subtitle">
+                    Cuerpo de la peticion
+                </h4>
+                <p>
+                    Para consumir el servicio "tokenizar tarjeta de credito" en
+                    el
+                    <i class="code_style">&nbsp;&nbsp;body&nbsp;&nbsp;</i> de la
+                    petición colocara los siguientes datos:
+                </p>
+                <pre class="code">
+{
+        <span class="code_green">"firstname"</span> : <span class="code_green">"LEONARDO"</span>,
+        <span class="code_green">"lastname"</span> : <span class="code_green">"CUBILLOS SANCHEZ"</span>,
+        <span class="code_green">"card_identification"</span> : <span class="code_green">"79841648"</span>,
+        <span class="code_green">"identification_type"</span> : <span class="code_red">4</span>,
+        <span class="code_green">"Correo"</span> : <span class="code_green">"lcubillos@gmail.com"</span>,
+        <span class="code_green">"Celular"</span> : <span class="code_green">"3227552288"</span>,
+        <span class="code_green">"Direccion"</span> : <span class="code_green">"Cra 80i n 56 50 Sur"</span>,
+        <span class="code_green">"card_holder"</span> : <span class="code_green">"PEPITO PEREZ PA"</span>,
+        <span class="code_green">"card_pan"</span> : <span class="code_green">"5567158043062926"</span>,
+        <span class="code_green">"card_expiry_year"</span> : <span class="code_green">"26"</span>,
+        <span class="code_green">"card_expiry_month"</span> : <span class="code_green">"06"</span>,
+        <span class="code_green">"card_cvv"</span> : <span class="code_green">"123"</span>,
+        <span class="code_green">"terminal_id"</span> : <span class="code_red">77</span>,
+        <span class="code_green">"autorizacionDatos"</span> : <span class="code_red">true</span>
+}
+</pre>
+                <h4 class="documentation_itm-subtitle">
+                    Ejemplo de la petición
+                </h4>
+                <pre class="code">
+<span class="code_blue">var</span> myHeaders = <span class="code_blue"> new </span> Headers();
+myHeaders.<span class="code_yellow">append</span> (<span class="code_green">"x-api-key"</span>, <span class="code_green">"Api_key"</span>);
+
+<span class="code_blue">var</span> cuerpo = {
+    <span class="code_green">"firstname"</span> : <span class="code_green">"LEONARDO"</span>,
+    <span class="code_green">"lastname"</span> : <span class="code_green">"CUBILLOS SANCHEZ"</span>,
+    <span class="code_green">"card_identification"</span> : <span class="code_green">"79841648"</span>,
+    <span class="code_green">"identification_type"</span> : <span class="code_red">4</span>,
+    <span class="code_green">"Correo"</span> : <span class="code_green">"lcubillos@gmail.com"</span>,
+    <span class="code_green">"Celular"</span> : <span class="code_green">"3227552288"</span>,
+    <span class="code_green">"Direccion"</span> : <span class="code_green">"Cra 80i n 56 50 Sur"</span>,
+    <span class="code_green">"card_holder"</span> : <span class="code_green">"PEPITO PEREZ PA"</span>,
+    <span class="code_green">"card_pan"</span> : <span class="code_green">"5567158043062926"</span>,
+    <span class="code_green">"card_expiry_year"</span> : <span class="code_green">"26"</span>,
+    <span class="code_green">"card_expiry_month"</span> : <span class="code_green">"06"</span>,
+    <span class="code_green">"card_cvv"</span> : <span class="code_green">"123"</span>,
+    <span class="code_green">"terminal_id"</span> : <span class="code_red">77</span>,
+    <span class="code_green">"autorizacionDatos"</span> : <span class="code_red">true</span>
+}
+
+<span class="code_blue">var</span>  requestOptions = {
+  method: <span class="code_green">'POST'</span>,
+  headers: myHeaders,
+  body: cuerpo
+  redirect: <span class="code_green">'follow'</span>
+};
+
+<span class="code_yellow">fetch</span>(<span class="code_green">"http://rationalsoftware.ddns.net:3008/ClientAPI/TokenizarTarjeta"</span>, requestOptions)
+  <span class="code_yellow">.then</span>(response => response<span class="code_yellow">.text</span>())
+  <span class="code_yellow">.then</span>(result => console<span class="code_yellow">.log</span>(result))
+  <span class="code_yellow">.catch</span>(error => console<span class="code_yellow">.log</span>(<span class="code_green">'error'</span>, error));</pre>
+            </section>
+
+            <section class="documentation_itm none documentation_itm1">
+                <h3 class="documentation_itm-title">
+                    <span class="method method_post">POST</span> Crear
+                    Transacción PSE
+                </h3>
+                <pre class="code">
+&nbsp;http://rationalsoftware.ddns.net:3008/ClientAPI/CrearTransaccionPSE</pre
+                >
+                <h4 class="documentation_itm-subtitle">Headers</h4>
+                <p>
+                    Para consumir el servicio de "crear transacción PSE"
+                    necesitaremos en el
+                    <i class="code_style">&nbsp;&nbsp;header&nbsp;&nbsp;</i>
+                    de la petición su
+                    <i class="code_style">&nbsp;&nbsp;Api_key&nbsp;&nbsp; </i>
+                </p>
+                <h4 class="documentation_itm-subtitle">Parametrización</h4>
+                <table id="ctp">
+                    <thead>
+                        <tr>
+                            <th><strong>Campo</strong></th>
+                            <th><strong>Tipo</strong></th>
+                            <th><strong>Descripción</strong></th>
+                            <th><strong>Requerido</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>amount</td>
+                            <td>integer</td>
+                            <td>Valor del pago</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>PersonType</td>
+                            <td>string</td>
+                            <td>
+                                Enviar <strong>0</strong> para Persona Natural y
+                                <strong>1</strong> para Persona Juridica
+                            </td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>identification_type</td>
+                            <td>Integer</td>
+                            <td>Tipo de identificacion del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>Documento</td>
+                            <td>string</td>
+                            <td>Identificacion del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>Correo</td>
+                            <td>string</td>
+                            <td>Email del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>Nombres</td>
+                            <td>string</td>
+                            <td>Nombres del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>Apellidos</td>
+                            <td>string</td>
+                            <td>Apellidos del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>Celular</td>
+                            <td>string</td>
+                            <td>Celular del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>Direccion</td>
+                            <td>string</td>
+                            <td>Direccion del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>external_order</td>
+                            <td>string</td>
+                            <td>Identificador unico del lado del comercio</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>CodigoBanco</td>
+                            <td>string</td>
+                            <td>
+                                Codigo del Banco, se obtienen del servicio
+                                <strong>Obtener listado bancos</strong>
+                            </td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>NombreBanco</td>
+                            <td>string</td>
+                            <td>
+                                Nombre del Banco, se obtienen del servicio
+                                <strong>Obtener listado bancos</strong>
+                            </td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>entityurl</td>
+                            <td>string</td>
+                            <td>
+                                Url de redireccion cuando el pago sea exitoso
+                            </td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>terminal_id</td>
+                            <td>integer</td>
+                            <td>Id de la terminal</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>form_id</td>
+                            <td>integer</td>
+                            <td>Id del formulario</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>ip</td>
+                            <td>string</td>
+                            <td>Numero de IP del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>additionalData</td>
+                            <td>Object</td>
+                            <td>
+                                Objeto con informacion adicional que se
+                                retornara en el webhook
+                            </td>
+                            <td>No</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 class="documentation_itm-subtitle">
+                    Cuerpo de la petición
+                </h4>
+                <p>
+                    Para consumir el servicio "crear transacción PSE" en el
+                    <i class="code_style">&nbsp;&nbsp;body&nbsp;&nbsp;</i> de la
+                    petición colocara los siguientes datos:
+                </p>
+                <pre class="code">
+{
+        <span class="code_green">"amount"</span> : <span class="code_red">30000</span>,
+        <span class="code_green">"PersonType"</span> : <span class="code_green">"0"</span>,
+        <span class="code_green">"identification_type"</span> : <span class="code_red">4</span>,
+        <span class="code_green">"Documento"</span> : <span class="code_green">"79841648"</span>,
+        <span class="code_green">"Correo"</span> : <span class="code_green">"lcubillos@gmail.com"</span>,
+        <span class="code_green">"Nombres"</span> : <span class="code_green">"Ana"</span>,
+        <span class="code_green">"Apellidos"</span> : <span class="code_green">"Perez"</span>,
+        <span class="code_green">"Celular"</span> : <span class="code_red">3167225855</span>,
+        <span class="code_green">"Direccion"</span> : <span class="code_green">"Calle 32 # 74 -31"</span>,
+        <span class="code_green">"external_order"</span> : <span class="code_green">"26"</span>,
+        <span class="code_green">"CodigoBanco"</span> : <span class="code_green">"10512"</span>,
+        <span class="code_green">"NombreBanco"</span> : <span class="code_green">"BANCO DAVIVIENDA"</span>,
+        <span class="code_green">"entityurl"</span> : <span class="code_green">"https://mysite.com/payment/success"</span>,
+        <span class="code_green">"terminal_id"</span> : <span class="code_red">34</span>
+        <span class="code_green">"form_id"</span> : <span class="code_red">34</span>
+        <span class="code_green">"ip"</span> : <span class="code_green">"192.168.0.1"</span>
+        <span class="code_green">"additionalData"</span> : {
+            <span class="code_green">"CualquierCosa"</span> : <span class="code_green">"CualquierCosa"</span>
+        }
+}
+</pre>
+                <h4 class="documentation_itm-subtitle">
+                    Ejemplo de la petición
+                </h4>
+                <pre class="code">
+<span class="code_blue">var</span> myHeaders = <span class="code_blue"> new </span> Headers();
+myHeaders.<span class="code_yellow">append</span> (<span class="code_green">"x-api-key"</span>, <span class="code_green">"Api_key"</span>);
+
+<span class="code_blue">var</span> cuerpo = {
+    <span class="code_green">"amount"</span> : <span class="code_red">30000</span>,
+    <span class="code_green">"PersonType"</span> : <span class="code_green">"0"</span>,
+    <span class="code_green">"identification_type"</span> : <span class="code_red">4</span>,
+    <span class="code_green">"Documento"</span> : <span class="code_green">"79841648"</span>,
+    <span class="code_green">"Correo"</span> : <span class="code_green">"lcubillos@gmail.com"</span>,
+    <span class="code_green">"Nombres"</span> : <span class="code_green">"Ana"</span>,
+    <span class="code_green">"Apellidos"</span> : <span class="code_green">"Perez"</span>,
+    <span class="code_green">"Celular"</span> : <span class="code_red">3167225855</span>,
+    <span class="code_green">"Direccion"</span> : <span class="code_green">"Calle 32 # 74 -31"</span>,
+    <span class="code_green">"external_order"</span> : <span class="code_green">"26"</span>,
+    <span class="code_green">"CodigoBanco"</span> : <span class="code_green">"10512"</span>,
+    <span class="code_green">"NombreBanco"</span> : <span class="code_green">"BANCO DAVIVIENDA"</span>,
+    <span class="code_green">"entityurl"</span> : <span class="code_green">"https://mysite.com/payment/success"</span>,
+    <span class="code_green">"terminal_id"</span> : <span class="code_red">34</span>
+    <span class="code_green">"form_id"</span> : <span class="code_red">34</span>
+    <span class="code_green">"ip"</span> : <span class="code_green">"192.168.0.1"</span>
+    <span class="code_green">"additionalData"</span> : {
+        <span class="code_green">"CualquierCosa"</span> : <span class="code_green">"CualquierCosa"</span>
+    }
+}
+
+<span class="code_blue">var</span>  requestOptions = {
+  method: <span class="code_green">'POST'</span>,
+  headers: myHeaders,
+  body: cuerpo
+  redirect: <span class="code_green">'follow'</span>
+};
+
+<span class="code_yellow">fetch</span>(<span class="code_green">"http://rationalsoftware.ddns.net:3008/ClientAPI/CrearTransaccionPSE"</span>, requestOptions)
+  <span class="code_yellow">.then</span>(response => response<span class="code_yellow">.text</span>())
+  <span class="code_yellow">.then</span>(result => console<span class="code_yellow">.log</span>(result))
+  <span class="code_yellow">.catch</span>(error => console<span class="code_yellow">.log</span>(<span class="code_green">'error'</span>, error));</pre>
+            </section>
+
+            <section class="documentation_itm none documentation_itm1">
+                <h3 class="documentation_itm-title">
+                    <span class="method method_post">POST</span> Crear
+                    Transaccion Cash
+                </h3>
+                <pre class="code">
+&nbsp;http://rationalsoftware.ddns.net:3008/ClientAPI/CrearTransaccionCash</pre
+                >
+                <h4 class="documentation_itm-subtitle">Headers</h4>
+                <p>
+                    Para consumir el servicio de "crear transacción PSE"
+                    necesitaremos en el
+                    <i class="code_style">&nbsp;&nbsp;header&nbsp;&nbsp;</i>
+                    de la petición su
+                    <i class="code_style">&nbsp;&nbsp;Api_key&nbsp;&nbsp; </i>
+                </p>
+                <h4 class="documentation_itm-subtitle">Parametrización</h4>
+                <table id="ctc">
+                    <thead>
+                        <tr>
+                            <th><strong>Campo</strong></th>
+                            <th><strong>Tipo</strong></th>
+                            <th><strong>Descripción</strong></th>
+                            <th><strong>Requerido</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>amount</td>
+                            <td>integer</td>
+                            <td>Valor del pago</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>external_order</td>
+                            <td>string</td>
+                            <td>Identificador unico del lado del comercio</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>description</td>
+                            <td>string</td>
+                            <td>Descripción brebe de la orden</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>method</td>
+                            <td>string</td>
+                            <td>
+                                Metodo de pago, se optiene del servcicio
+                                <strong>Obtener Medios De Pago</strong>
+                            </td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>iva</td>
+                            <td>integer</td>
+                            <td>Iva sobre del pago (Si no aplica enviar 0)</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>user_identification</td>
+                            <td>string</td>
+                            <td>Identificacion del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>identification_type</td>
+                            <td>Integer</td>
+                            <td>Tipo de identificacion del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>user_name</td>
+                            <td>string</td>
+                            <td>Nombres del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>user_last_name</td>
+                            <td>string</td>
+                            <td>Apellidos del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>user_email</td>
+                            <td>string</td>
+                            <td>Email del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>user_phone</td>
+                            <td>string</td>
+                            <td>Celular del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>user_address</td>
+                            <td>string</td>
+                            <td>Direccion del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>terminal_id</td>
+                            <td>integer</td>
+                            <td>Id de la terminal</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>form_id</td>
+                            <td>integer</td>
+                            <td>Id del formulario</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>ip</td>
+                            <td>string</td>
+                            <td>Numero de IP del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>additionalData</td>
+                            <td>Object</td>
+                            <td>
+                                Objeto con informacion adicional que se
+                                retornara en el webhook
+                            </td>
+                            <td>No</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 class="documentation_itm-subtitle">
+                    Cuerpo de la peticion
+                </h4>
+                <p>
+                    Para consumir el servicio "crear transacción PSE" en el
+                    <i class="code_style">&nbsp;&nbsp;body&nbsp;&nbsp;</i> de la
+                    petición colocara los siguientes datos:
+                </p>
+                <pre class="code">
+{
+    <span class="code_green">"amount"</span> : <span class="code_red">30000</span>,
+    <span class="code_green">"external_order"</span> : <span class="code_red">26</span>,
+    <span class="code_green">"description"</span> : <span class="code_green">"any description test"</span>,
+    <span class="code_green">"method"</span> : <span class="code_green">"efecty"</span>,
+    <span class="code_green">"iva"</span> : <span class="code_red">0</span>,
+    <span class="code_green">"user_identificatio"</span> : <span class="code_green">"1020752319"</span>,
+    <span class="code_green">"identification_type"</span> : <span class="code_red">4</span>,
+    <span class="code_green">"user_name"</span> : <span class="code_green">"Andres Camil"</span>,
+    <span class="code_green">"user_last_name"</span> : <span class="code_green">"Perez"</span>,
+    <span class="code_green">"user_email"</span> : <span class="code_green">"andres.ochoa0@gmail.com"</span>,
+    <span class="code_green">"user_phone"</span> : <span class="code_green">"3227358312"</span>,
+    <span class="code_green">"user_address"</span> : <span class="code_green">"cra 8b 17 15"</span>,
+    <span class="code_green">"terminal_id"</span> : <span class="code_red">34</span>,
+    <span class="code_green">"form_id"</span> : <span class="code_red">34</span>
+    <span class="code_green">"ip"</span> : <span class="code_green">"192.168.0.1"</span>
+    <span class="code_green">"additionalData"</span> : {
+        <span class="code_green">"CualquierCosa"</span> : <span class="code_green">"CualquierCosa"</span>
+    }
+}
+</pre>
+                <h4 class="documentation_itm-subtitle">
+                    Ejemplo de la petición
+                </h4>
+                <pre class="code">
+<span class="code_blue">var</span> myHeaders = <span class="code_blue"> new </span> Headers();
+myHeaders.<span class="code_yellow">append</span> (<span class="code_green">"x-api-key"</span>, <span class="code_green">"Api_key"</span>);
+
+<span class="code_blue">var</span> cuerpo = {
+    <span class="code_green">"amount"</span> : <span class="code_red">30000</span>,
+    <span class="code_green">"external_order"</span> : <span class="code_red">26</span>,
+    <span class="code_green">"description"</span> : <span class="code_green">"any description test"</span>,
+    <span class="code_green">"method"</span> : <span class="code_green">"efecty"</span>,
+    <span class="code_green">"iva"</span> : <span class="code_red">0</span>,
+    <span class="code_green">"user_identificatio"</span> : <span class="code_green">"1020752319"</span>,
+    <span class="code_green">"identification_type"</span> : <span class="code_red">4</span>,
+    <span class="code_green">"user_name"</span> : <span class="code_green">"Andres Camil"</span>,
+    <span class="code_green">"user_last_name"</span> : <span class="code_green">"Perez"</span>,
+    <span class="code_green">"user_email"</span> : <span class="code_green">"andres.ochoa0@gmail.com"</span>,
+    <span class="code_green">"user_phone"</span> : <span class="code_green">"3227358312"</span>,
+    <span class="code_green">"user_address"</span> : <span class="code_green">"cra 8b 17 15"</span>,
+    <span class="code_green">"terminal_id"</span> : <span class="code_red">34</span>,
+    <span class="code_green">"form_id"</span> : <span class="code_red">34</span>
+    <span class="code_green">"ip"</span> : <span class="code_green">"192.168.0.1"</span>
+    <span class="code_green">"additionalData"</span> : {
+        <span class="code_green">"CualquierCosa"</span> : <span class="code_green">"CualquierCosa"</span>
+    }
+}
+
+<span class="code_blue">var</span>  requestOptions = {
+  method: <span class="code_green">'POST'</span>,
+  headers: myHeaders,
+  body: cuerpo
+  redirect: <span class="code_green">'follow'</span>
+};
+
+<span class="code_yellow">fetch</span>(<span class="code_green">"http://rationalsoftware.ddns.net:3008/ClientAPI/CrearTransaccionCash"</span>, requestOptions)
+  <span class="code_yellow">.then</span>(response => response<span class="code_yellow">.text</span>())
+  <span class="code_yellow">.then</span>(result => console<span class="code_yellow">.log</span>(result))
+  <span class="code_yellow">.catch</span>(error => console<span class="code_yellow">.log</span>(<span class="code_green">'error'</span>, error));</pre>
+            </section>
+
+            <section
+                class="documentation_itm none documentation_itm1 documentation_itm-position"
+            >
+                <i class="fa-solid fa-arrow-left"></i>
+                <h3 class="documentation_itm-title">Botón de pago</h3>
+                <p>
+                    Una vez seleccionado el botón de “Crear botón de pago”,
+                    diligenciaremos el formulario.
+                </p>
+                <ul class="register_space1">
+                    <li>
+                        Ingrese el nombre del botón de pago, el cual hará
+                        referencia al comercio ya inscrito.
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/create-btn-pw.png"
+                            alt=""
+                            class="figure_documentation largeImages"
+                        />
+                    </figure>
+                    <li>
+                        Seleccione la terminal la cual hace referencia a su
+                        comercio (Una vez usted realice su registro y le sean
+                        enviadas las credenciales de ingreso Payments Way, La
+                        terminal será creada de manera automática).
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/ps1.png"
+                            alt=""
+                            class="figure_documentation largeImages"
+                        />
+                    </figure>
+                    <li>
+                        Usted podrá elegir si el botón de pago será “Test” o
+                        “Producción” (Cuando lo desee usted podrá cambiar el re
+                        direccionamiento del botón)
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/tipe-btn.png"
+                            alt=""
+                            class="figure_documentation largeImages"
+                        />
+                    </figure>
+                    <li>
+                        Elija los medios de pagos que se ajusten a su comercio.
+                    </li>
+                    <li>
+                        Una vez seleccionados los medios de pagos, Creamos el
+                        Botón de pago.
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/payments-fnl.png"
+                            alt=""
+                            class="figure_documentation largeImages"
+                        />
+                    </figure>
+                </ul>
+            </section>
+            <section
+                class="documentation_itm none documentation_itm1 documentation_itm-position"
+            >
+                <i class="fa-solid fa-arrow-left"></i>
+                <h3 class="documentation_itm-title">Botón de pago Abiertos</h3>
+                <p>
+                    Con Payments Way usted tiene la posibilidad de crear un
+                    botón de pagos abiertos. Una vez seleccionado el botón de
+                    “Crear botón de pago”, diligenciará el formulario.
+                </p>
+
+                <ul class="register_space1">
+                    <li>
+                        Ingrese el nombre del botón de pago, el cual hará
+                        referencia al comercio ya inscrito.
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/pagos-abiertos1.png"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <li>
+                        Seleccione la terminal la cual hace referencia a su
+                        comercio (Una vez usted realice su registro y le sean
+                        enviadas las credenciales de ingreso Payments Way, La
+                        terminal será creada de manera automática).
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/pagos-abiertos3.png"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <li>Selecciona la opción “Botón de pago Abierto”.</li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/pagos-abiertos4.png"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <li>
+                        Usted podrá elegir si el botón de pago será “Test” o
+                        “Producción” (Cuando lo desee usted podrá cambiar el re
+                        direccionamiento del botón).
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/pagos-abiertos5.png"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <li>
+                        Elija los medios de pagos que se ajusten a su comercio.
+                    </li>
+                    <li>
+                        Una vez seleccionados los medios de pagos, Creamos el
+                        Botón de pago.
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/payments-fnl.png"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                </ul>
+            </section>
+            <section class="documentation_itm none documentation_itm1">
+                <h3 class="documentation_itm-title">BOTÓN DE PAGO</h3>
+                <pre
+                    id="code-renderer"
+                    class="mt-2 mb-3 pb-3 code"
+                >&lt;form method="post" action="https://merchant.paymentsway.co/cartaspago/redirect"&gt;
+            &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">merchant_id</span>" type="hidden"  value="<span class="highlight-txt2">0</span>"&gt;
+            &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">form_id</span>" type="hidden"  value="<span class="highlight-txt2">0</span>"&gt;
+            &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">terminal_id</span>" type="hidden"  value="<span class="highlight-txt2">0</span>"&gt;
+            &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">order_number</span>" type="hidden"  value="<span class="highlight-txt2">0"&gt;
+            &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">amount</span>" type="hidden"  value="<span class="highlight-txt2">0</span>"&gt;
+            &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">currency</span>" type="hidden"  value="<span class="highlight-txt2">cop</span>"&gt;
+            &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">order_description</span>" type="hidden"  value="<span class="highlight-txt2">Test de compra</span>"&gt;
+            &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">client_email</span>" type="hidden" value="<span class="highlight-txt2">user@example.com</span>"&gt;
+            &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">client_phone</span>" type="hidden" value="<span class="highlight-txt2">3000000000</span>"&gt;
+            &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">client_firstname</span>" type="hidden" value="<span class="highlight-txt2">pepito perez</span>"&gt;
+            &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">client_lastname</span>" type="hidden" value="<span class="highlight-txt2">ramirez ramirez</span>"&gt;
+            &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">client_doctype</span>" type="hidden" value="<span class="highlight-txt2">4</span>"&gt;
+            &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">client_numdoc</span>" type="hidden" value="<span class="highlight-txt2">1234567890</span>"&gt;
+            &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">response_url</span>" type="hidden" value="<span class="highlight-txt2">http://www.test.com/response</span>"&gt;
+            &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">Submit</span>" type="submit"  value="<span class="highlight-txt2">Enviar</span>"&gt;
+&lt;/form&gt;</span></pre>
+                <h4 class="documentation_itm-subtitle space">
+                    Parámetros mínimos a enviar en el formulario:
+                </h4>
+                <table id="formulario">
+                    <thead>
+                        <tr>
+                            <th>Campo</th>
+                            <th>Tipo</th>
+                            <th>Descripcion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    merchant_id
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">Numérico</p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Es el número identificador del comercio en
+                                    el sistema de PayWay, este número lo
+                                    encontrarás en la sección "Mis credenciale".
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    form_id
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">Numérico</p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Es el número identificador del boton de pago
+                                    que encontrara con el identificado "ID" en
+                                    cada tarjeta de cada botón de pago.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    order_number
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Alfa numérico
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Es la referencia de la venta o pedido. Deber
+                                    ser único por cada transacción que se envía
+                                    al sistema.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    amount
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">Numérico</p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Es el monto total de la transacción. Puede
+                                    contener dos dígitos decimales. Ej. 10000.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    currency
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Alfa numérico
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    La moneda respectiva en la que se realiza el
+                                    pago. El proceso de conciliación se hace en
+                                    pesos a la tasa representativa del día. Ej.
+                                    COP
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    order_description
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Alfa numérico
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Es la descripción de la venta.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    client_email
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Alfa numérico
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Es el correo electrónico del cliente.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    response_url
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Alfa numérico
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Url de respuesta para el cliente.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    client_phone
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">Numérico</p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Es el número de celular de contacto del
+                                    cliente.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    client_firstname
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Alfa numérico
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Es el primer nombre del cliente.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    client_lastname
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Alfa numérico
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Son los apellidos del cliente.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    client_doctype
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Alfa numérico
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Es el tipo de documento del cliente.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    client_numdoc
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">Numérico</p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Es el numéro de documento del cliente.
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="documentation_itm-line"></div>
+                <h4 class="documentation_itm-subtitle">
+                    Tipo de documento del cliente
+                </h4>
+                <p>
+                    Este campo se debe generar con su id correspondiente
+                    dependiedo de la descripción para el tipo de documento de la
+                    siguiente manera:
+                </p>
+                <ul class="register_space1">
+                    <li>id="1": Pasaporte.</li>
+
+                    <li>id="4": Cédula de ciudadanía.</li>
+
+                    <li>id="5": Cédula de extranjería.</li>
+                    <li>id="6": NIT.</li>
+                </ul>
+                <h4 class="documentation_itm-subtitle">Currency</h4>
+                <p>
+                    Este campo se debe generar con su value correspondiente
+                    dependiedo de la descripción del tipo de moneda de la
+                    siguiente manera:
+                </p>
+                <ul class="register_space1">
+                    <li>value="COP": Pesos colombianos.</li>
+                    <li>value="USD": Dolares americanos.</li>
+                    <li>value="EUR": Euros.</li>
+                </ul>
+                <div class="documentation_itm-line"></div>
+                <h4 class="documentation_itm-subtitle">Modo de uso</h4>
+                <p>
+                    Una vez copiado el código en su pagina web o E-commerce
+                    usted podrá visualizar el siguiente botón.
+                </p>
+                <i class="center_i space">
+                    Recuerde que el botón tendrá los estilos que usted desee
+                    implementar en su pagina Web o E-commerce
+                </i>
+                <button style="margin: 10px auto">Enviar</button>
+                <p>
+                    Modificando el atributo
+                    <i class="code_style"
+                        >&nbsp;&nbsp;&lt;name=”currency”&gt;&nbsp;</i
+                    >
+                    dentro
+                    <i class="code_style">&nbsp;&nbsp;&lt;form&gt;&nbsp;</i>
+                    usted podrá cambiar la moneda con la cual se efectuará su
+                    pago.
+                </p>
+
+                <ul>
+                    <li>
+                        Hará Clic en el botón enviar, el cual lo re direccionará
+                        a la pasarela de pagos, donde procederá a elegir el
+                        método de pago (Tarjeta, Pse o Efectivo) y finalmente
+                        realizar su pago.
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="./assets/img/1.png"
+                            alt=""
+                            class="figure_documentation fifty"
+                        />
+                    </figure>
+                </ul>
+            </section>
+            <section class="documentation_itm none documentation_itm1">
+                <h3 class="documentation_itm-title">BOTÓN DE PAGOS ABIERTOS</h3>
+                <pre
+                    id="code-renderer"
+                    class="mt-2 mb-3 pb-3 code"
+                >&lt;form method="post" action="https://merchant.paymentsway.co/cartaspago/redirect"&gt;
+        &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">merchant_id</span>" type="hidden"  value="<span class="highlight-txt2">0</span>"&gt;
+        &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">form_id</span>" type="hidden"  value="<span class="highlight-txt2">0</span>"&gt;
+        &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">terminal_id</span>" type="hidden"  value="<span class="highlight-txt2">0</span>"&gt;
+        &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">order_number</span>" type="hidden"  value="<span class="highlight-txt2">0"&gt;
+        &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">amount</span>" type="hidden"  value="<span class="highlight-txt2">0</span>"&gt;
+        &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">currency</span>" type="hidden"  value="<span class="highlight-txt2">cop</span>"&gt;
+        &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">type_method</span>" type="hidden"  value="<span class="highlight-txt2">2</span>"&gt;
+        &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">amount_1</span>" type="hidden"  value="<span class="highlight-txt2">10000</span>"&gt;
+        &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">amount_2</span>" type="hidden"  value="<span class="highlight-txt2">20000</span>"&gt;
+        &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">amount_3</span>" type="hidden"  value="<span class="highlight-txt2">30000</span>"&gt;
+        &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">amount_4</span>" type="hidden"  value="<span class="highlight-txt2">40000</span>"&gt;
+        &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">min_amount</span>" type="hidden"  value="<span class="highlight-txt2">10000</span>"&gt;
+        &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">max_amount</span>" type="hidden"  value="<span class="highlight-txt2">40000</span>"&gt;
+        &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">client_email</span>" type="hidden" value="<span class="highlight-txt2">user@example.com</span>"&gt;
+        &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">client_phone</span>" type="hidden" value="<span class="highlight-txt2">3000000000</span>"&gt;
+        &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">client_firstname</span>" type="hidden" value="<span class="highlight-txt2">pepito perez</span>"&gt;
+        &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">client_lastname</span>" type="hidden" value="<span class="highlight-txt2">ramirez ramirez</span>"&gt;
+        &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">client_doctype</span>" type="hidden" value="<span class="highlight-txt2">4</span>"&gt;
+        &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">client_numdoc</span>" type="hidden" value="<span class="highlight-txt2">1234567890</span>"&gt;
+        &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">response_url</span>" type="hidden" value="<span class="highlight-txt2">http://www.test.com/response</span>"&gt;
+        &nbsp;&nbsp;&lt;input name="<span class="highlight-txt2">Submit</span>" type="submit"  value="<span class="highlight-txt2">Enviar</span>"&gt;
+&lt;/form&gt;</span></pre>
+                <h4 class="documentation_itm-subtitle">
+                    Parámetros mínimos a enviar en el formulario:
+                </h4>
+                <table id="formulario2">
+                    <thead>
+                        <tr>
+                            <th>Campo</th>
+                            <th>Tipo</th>
+                            <th>Descripcion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    merchant_id
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">Numérico</p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Es el número identificador del comercio en
+                                    el sistema de PayWay, este número lo
+                                    encontrarás en la sección "Mis credenciale".
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    form_id
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">Numérico</p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Es el número identificador del boton de pago
+                                    que encontrara con el identificado "ID" en
+                                    cada tarjeta de cada botón de pago.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    order_number
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Alfa numérico
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Es la referencia de la venta o pedido. Deber
+                                    ser único por cada transacción que se envía
+                                    al sistema.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    amount
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">Numérico</p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Es el monto total de la transacción. Puede
+                                    contener dos dígitos decimales. Ej. 10000.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    currency
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Alfa numérico
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    En el tipo de botón abierto solo se podrán
+                                    realizar pagos en COP.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    type_method
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">Numérico</p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Es el número que identifica al botón de pago
+                                    como "abierto" (Siempre su valor debe ser
+                                    2).
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    amount_1
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">Numérico</p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Es el primer valor a sugerir dentro del
+                                    botón de pago abierto (Opcional).
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    amount_2
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">Numérico</p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Es el segundo valor a sugerir dentro del
+                                    botón de pago abierto (Opcional).
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    amount_3
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">Numérico</p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Es el tercer valor a sugerir dentro del
+                                    botón de pago abierto (Opcional).
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    amount_4
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">Numérico</p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Es el cuarto valor a sugerir dentro del
+                                    botón de pago abierto (Opcional).
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    min_amount
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">Numérico</p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Es el valor mínimo por el cual se podrá
+                                    realizar el pago.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    max_amount
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">Numérico</p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Es el valor máximo por el cual se podrá
+                                    realizar el pago.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    order_description
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Alfa numérico
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Es la descripción de la venta.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    client_email
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Alfa numérico
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Es el correo electrónico del cliente.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    response_url
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Alfa numérico
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Url de respuesta para el cliente.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    client_phone
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">Numérico</p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Es el número de celular de contacto del
+                                    cliente.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    client_firstname
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Alfa numérico
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Es el primer nombre del cliente.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    client_lastname
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Alfa numérico
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Son los apellidos del cliente.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    client_doctype
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Alfa numérico
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Es el tipo de documento del cliente.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    client_numdoc
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">Numérico</p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Es el numéro de documento del cliente.
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="documentation_itm-line"></div>
+                <h4 class="documentation_itm-subtitle">
+                    Tipo de documento del cliente
+                </h4>
+                <p>
+                    Este campo se debe generar con su id correspondiente
+                    dependiedo de la descripción para el tipo de documento de la
+                    siguiente manera:
+                </p>
+                <ul class="register_space1">
+                    <li>id="1": Pasaporte.</li>
+
+                    <li>id="4": Cédula de ciudadanía.</li>
+
+                    <li>id="5": Cédula de extranjería.</li>
+                    <li>id="6": NIT.</li>
+                </ul>
+                <h4 class="documentation_itm-subtitle">Currency</h4>
+                <p>
+                    Este campo se debe generar con su value correspondiente
+                    dependiedo de la descripción del tipo de moneda de la
+                    siguiente manera:
+                </p>
+                <ul class="register_space1">
+                    <li>value="COP": Pesos colombianos.</li>
+                    <li>value="USD": Dolares americanos.</li>
+                    <li>value="EUR": Euros.</li>
+                </ul>
+                <div class="documentation_itm-line"></div>
+                <h4 class="documentation_itm-subtitle">MODO DE USO</h4>
+                <p>
+                    Una vez copiado el código en su pagina web o E-commerce
+                    usted podrá visualizar el siguiente botón:
+                </p>
+                <i class="center_i space">
+                    (Recuerde que el botón tendrá los estilos que usted desee
+                    implementar en su pagina Web o E-commerce).
+                </i>
+                <button style="margin: 10px auto">Enviar</button>
+                <p>
+                    Dando clic en el botón enviar, usted será re direccionado a
+                    la pasarela de pagos abiertos, la cual visualizará de la
+                    siguiente manera:
+                </p>
+                <figure class="fifty">
+                    <img
+                        loading="lazy"
+                        src="./assets/img/visualizara.png"
+                        class="figure_documentation"
+                        alt=""
+                    />
+                </figure>
+                <p>
+                    Con el botón de pagos abiertos su cliente tendrá la opción
+                    de elegir el monto con el cual desea realizar el pago.
+                    Encontrará dos maneras de hacerlo:
+                </p>
+                <ul class="register_space1">
+                    <li>
+                        La primera será seleccionando alguna de las cuatro
+                        opciones que se muestran en pantalla.
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="./assets/img/value.png"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <li>
+                        En nuestra segunda opción su cliente podrá elegir de
+                        manera manual un monto en un intervalo mínimo y máximo,
+                        este valor se le ira indicado con una barra medidora la
+                        cual ira mostrando los montos elegidos en la parte
+                        superior.
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="./assets/img/4.png"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                </ul>
+                <i class="center_i"
+                    >Recuerde que estos valores podrán ser modificados por el
+                    comercio, la información a modificar la encontrará en la
+                    tabla de “Parámetros mínimos a enviar al formulario”.</i
+                >
+                <ul class="register_space1">
+                    <li>
+                        Una vez elegido el monto para realizar el pago, su
+                        cliente podrá elegir la opción de “Realizar pagos
+                        recurrentes” donde también podrá elegir el intervalo de
+                        tiempo por el cual se efectuarán esos pagos (Mensual,
+                        Trimestral, Semestral o Anual).
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="./assets/img/5.png"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <li>
+                        Para finalizar, su cliente deberá elegir el método de
+                        pago que mas cómodo le quede (Tarjeta crédito/debito,
+                        Pse o Efectivo).
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="./assets/img/6.png"
+                            alt=""
+                            class="figure_documentation sixty"
+                        />
+                    </figure>
+                </ul>
+            </section>
+            <section class="documentation_itm none documentation_itm1">
+                <h3 class="documentation_itm-title">WIDGET</h3>
+                <p>
+                    Acepte pagos en su sitio web en minutos, utilizando nuestra
+                    opción de Checkout; Permita que sus clientes completen un
+                    pago sin salir de su sitio web, simplemente incluyendo una
+                    etiqueta
+                    <i class="code_style">&nbsp;&nbsp;&lt;script&gt;&nbsp;</i>
+                    dentro su página web. Para el uso del widget, inicialmente
+                    agregue en su documento lo siguiente:
+                </p>
+                <ul class="register_space1">
+                    <li>
+                        En la parte del
+                        <i class="code_style"
+                            >&nbsp;&nbsp;&lt;head&gt;&nbsp;
+                        </i>
+                        &nbsp;agregaremos el siguiente css
+                    </li>
+                    <pre class="code">
+&nbsp;&nbsp;&lt;link rel="stylesheet" href="https://merchant.paymentsway.co/assetsWidget/css/index.css" /&gt;</pre
+                    >
+
+                    <li>
+                        Agregamos el siguiente script hasta el final del
+                        <i class="code_style">&nbsp;&nbsp;&lt;body&gt;&nbsp; </i
+                        >, para que pueda cargar correctamente el script
+                    </li>
+                    <pre class="code">
+&nbsp;&nbsp;&lt;script src="https://merchant.paymentsway.co/assetsWidget/js/index.js"&gt;&nbsp;&nbsp;&lt;/script&gt;</pre
+                    >
+                    <li class="p_especial-top">
+                        Una vez agregados los hipervinculos y definido el
+                        espacio donde se visualizará nuestro widget, usted
+                        deberá anexar el siguiente código:
+                    </li>
+                    <ul>
+                        <pre class="code">
+&nbsp;&nbsp;&lt;div id="payment-widget"&gt;&nbsp;&nbsp;&lt;/div&gt;</pre
+                        >
+                    </ul>
+                    <li class="p_especial-top">
+                        Creara en su proyecto un
+                        <i class="code_style">&nbsp;&lt;script&gt;&nbsp;</i> en
+                        el
+                        <i class="code_style">&nbsp;&nbsp;&lt;body&gt;&nbsp; </i
+                        >. Una vez creada la etiqueta, pondra la implementación
+                        del widget con el siguiente codigo
+                    </li>
+                </ul>
+
+                <pre class="code code_especial">
+const checkout = new widgetCheckout({
+    merchant_id: su Merchant id,
+    form_id: su form id,
+    terminal_id: su terminal id,
+    order_number: su order number,
+    amount: finalPrice,
+    currency: 'COP',
+    order_description: 'Test de compra',
+    apikey: Apikey,
+    ip: '192.158.1.38',
+});</pre
+                >
+
+                <h4 class="documentation_itm-subtitle">
+                    Parámetros a enviar en el formulario:
+                </h4>
+                <table id="formulario220">
+                    <thead>
+                        <tr>
+                            <th>Campo</th>
+                            <th>Tipo</th>
+                            <th>Descripcion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    merchant_id
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Alfa numérico
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Es el número identificador del comercio en
+                                    el sistema de PayWay, este número lo
+                                    encontrarás en la sección "Mis credenciale".
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    form_id
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Alfa numérico
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Es la referencia de la venta o pedido. Deber
+                                    ser único por cada transacción que se envía
+                                    al sistema.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    order_number
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Alfa numérico
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Codigo de aletorio.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    amount
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Alfa numérico
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Este campo se debe generar con su value
+                                    correspondiente dependiedo de la descripción
+                                    del tipo de moneda.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    order_description
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Alfa numérico
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Descripción de la compra.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p
+                                    class="text-left mb-0 text-gray font-weight-bold"
+                                >
+                                    apikey
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    Alfa numérico
+                                </p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-left mb-0 text-gray">
+                                    La llave de seguridad aparece en el
+                                    dashboard de la consola.
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4 class="documentation_itm-subtitle">
+                    ¿Como obtener los datos para la implementación del widget?
+                </h4>
+                <ol class="register_space1">
+                    <li>
+                        Para obtener los datos, tendremos que ingresar a la
+                        consola de Payments Way, usted deber ingresar con su
+                        usuario y contraseña.
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/ingreso.png"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <li>
+                        Estando en la consola, usted dará click en el botón
+                        "Botones de pago"
+                    </li>
+                    <figure class="figure_documentation-img1">
+                        <img
+                            loading="lazy"
+                            src="/assets/img/botonDePago.png"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <li>
+                        Seleccionara el botón de pago que haga referencia a su
+                        comercio y a la función que desea cumplir
+                    </li>
+                    <figure class="figure_documentation-img1">
+                        <img
+                            loading="lazy"
+                            src="/assets/img/botones-muestra.png"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <li>
+                        Una vez seleccionado el botón de pago de su comercio, al
+                        instante se abrirá una ventana en la cual usted podrá
+                        encontrar la información completa de su botón.
+                    </li>
+                    <ul class="register_space1">
+                        <li>
+                            Ubicaremos en el código el espacio
+                            <i class="code_style"
+                                >&nbsp;&lt;merchant_id&gt;&nbsp;</i
+                            >
+                            y copiaremos lo que esta dentro de las comillas del
+                            <i class="code_style"
+                                >&nbsp;&lt;value="70"&gt;&nbsp;</i
+                            >
+                            (El número a copiar será el cual le indique la
+                            información de su botón de pago ya creado) a nuestro
+                            script y lo pegaremos en
+                            <i class="code_style"
+                                >&nbsp;&lt;merchant_id&gt;&nbsp;</i
+                            >
+                        </li>
+                        <figure class="figure_documentation-img1">
+                            <img
+                                loading="lazy"
+                                src="/assets/img/MerchantID.jpg"
+                                alt=""
+                                class="figure_documentation"
+                            />
+                        </figure>
+                        <li>
+                            Ubicaremos en el código el espacio
+                            <i class="code_style"
+                                >&nbsp;&lt;form_id&gt;&nbsp;</i
+                            >
+                            y copiaremos lo que esta dentro de las comillas del
+                            <i class="code_style"
+                                >&nbsp;&lt;value="123"&gt;&nbsp;</i
+                            >
+                            (El número a copiar será el cual le indique la
+                            información de su botón de pago ya creado) a nuestro
+                            script y lo pegaremos en
+                            <i class="code_style"
+                                >&nbsp;&lt;form_id&gt;&nbsp;</i
+                            >
+                        </li>
+                        <figure class="figure_documentation-img1">
+                            <img
+                                loading="lazy"
+                                src="/assets/img/form_id.jpg"
+                                alt=""
+                                class="figure_documentation"
+                            />
+                        </figure>
+                        <li>
+                            Ubicaremos en el código el espacio
+                            <i class="code_style"
+                                >&nbsp;&lt;terminal_id&gt;&nbsp;</i
+                            >
+                            y copiaremos lo que esta dentro de las comillas del
+                            <i class="code_style"
+                                >&nbsp;&lt;value="103"&gt;&nbsp;</i
+                            >
+                            (El número a copiar será el cual le indique la
+                            información de su botón de pago ya creado) a nuestro
+                            script y lo pegaremos en
+                            <i class="code_style"
+                                >&nbsp;&lt;terminal_id&gt;&nbsp;</i
+                            >
+                        </li>
+                        <figure class="figure_documentation-img1">
+                            <img
+                                loading="lazy"
+                                src="/assets/img/terminal-id.jpg"
+                                alt=""
+                                class="figure_documentation"
+                            />
+                        </figure>
+                        <li>
+                            Para el
+                            <i class="code_style"
+                                >&nbsp;&lt;order_number&gt;&nbsp;</i
+                            >
+                            recomendamos implementar un algoritmo para crear el
+                            mismo, esto debido a que no puede haber dos
+                            order_number con el mismo nombre
+                        </li>
+                        <pre class="code">
+generateRandomString = (num) => {
+    const characters =
+        'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result1 = Math.random().toString(36).substring(num);
+    return result1;
+};</pre
+                        >
+                        <li>
+                            Para el
+                            <i class="code_style">&nbsp;amount&nbsp;</i>
+                            se pondra el monto a pagar segun requiera su
+                            comercio. (Tenga en cuenta que puede ser cambiado de
+                            acuerdo a su necesidad)
+                        </li>
+                        <li>
+                            <i class="code_style">&nbsp;currency&nbsp;</i>
+                            Este hará referencia al tipo de moneda con la cual
+                            usted recibira el dinero de su comercio ("COP",
+                            "USD", "EUR").
+                        </li>
+                        <li>
+                            En
+                            <i class="code_style"
+                                >&nbsp;order_description&nbsp;</i
+                            >
+                            usted podra poner la descripción correspondiente a
+                            su comercio.
+                        </li>
+                        <li>
+                            Para obtener la información de su
+                            <i class="code_style">&nbsp;apikey&nbsp;</i> usted
+                            se redireccionara a la parte del inicio de la
+                            consola, en donde encontrara un espacio unico con la
+                            información del apikey.
+                        </li>
+                        <figure class="figure_documentation-img1">
+                            <img
+                                loading="lazy"
+                                src="/assets/img/inicio.jpg"
+                                alt=""
+                                class="figure_documentation"
+                            />
+                        </figure>
+                        <figure class="figure_documentation-img1">
+                            <img
+                                loading="lazy"
+                                src="/assets/img/apikey.jpg"
+                                alt=""
+                                class="figure_documentation"
+                            />
+                        </figure>
+                    </ul>
+                </ol>
+            </section>
+            <section class="documentation_itm none documentation_itm1">
+                <h3 class="documentation_itm-title">MODO DE USO</h3>
+                <p>
+                    Una vez implementado el WIDGET a su comercio, usted lo podrá
+                    visualizar con un botón de la siguiente manera:
+                </p>
+                <figure>
+                    <img
+                        loading="lazy"
+                        src="./assets/img/7.png"
+                        alt=""
+                        class="figure_documentation"
+                    />
+                </figure>
+                <p>
+                    A continuación, le explicaremos el paso a paso de lo que
+                    vera al realizar pagos.
+                </p>
+                <ul class="register_space1">
+                    <li>
+                        Elegirá el método de pago por el cual se realizará la
+                        transacción.
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="./assets/img/8.png"
+                            alt=""
+                            class="figure_documentation fifty"
+                        />
+                    </figure>
+                </ul>
+
+                <div class="btns_especial">
+                    <button class="btns_especial3" onclick="menu_select(21, 1)">
+                        <figure>
+                            <img
+                                loading="lazy"
+                                src="./assets/img/tarjetas.png"
+                                alt=""
+                            />
+                        </figure>
+                    </button>
+                    <button class="btns_especial2" onclick="menu_select(22, 1)">
+                        <figure>
+                            <img
+                                loading="lazy"
+                                src="./assets/img/pse.png"
+                                alt=""
+                            />
+                        </figure></button
+                    ><button
+                        class="btns_especial1"
+                        onclick="menu_select(23, 1)"
+                    >
+                        <figure>
+                            <img
+                                loading="lazy"
+                                src="./assets/img/efectivo.png"
+                                alt=""
+                            />
+                        </figure>
+                    </button>
+                </div>
+            </section>
+            <section class="documentation_itm none documentation_itm1">
+                <h3 class="documentation_itm-title">Introducción</h3>
+                <p>
+                    A continuación, usted encontrará una guía con el paso a paso
+                    de como Incluir el plugin PAYMENTS WAY MERCHANT con
+                    WooCommerce y lograr una integración satisfactoria con su
+                    Ecommerce. Ofrezca a sus clientes la posibilidad de generar
+                    pagos en línea de manera segura y confiable mediante la
+                    pasarela de pago PAYMENTS WAY MERCHANT. Para mas información
+                    puede consultar:
+                    <a
+                        class="informacion_ref-es"
+                        href="https://merchant.paymentsway.co/"
+                        >paymentsway.co/</a
+                    >
+                </p>
+                <h4 class="documentation_itm-subtitle">Moneda</h4>
+                <p>
+                    Para el correcto uso del plugin, usted debe utilizar una de
+                    las siguientes monedas: COP, USD y EUR.
+                </p>
+                <h4 class="documentation_itm-subtitle">Requisitos</h4>
+                <ul class="register_space1">
+                    <li>Acceso a cuenta paymemts way</li>
+                    <li>Acceso a administrador wordpress</li>
+                </ul>
+                <ol class="register_space1">
+                    <li>
+                        Para el correcto ACCESO a la consola de Payments Way,
+                        usted deber ingresar con su usuario y contraseña.
+                    </li>
+                    <li>Acceso a administrador wordpress</li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/wp1.png"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/wp2.png"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <li>Suba el plugin, Instale y active.</li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/wp3.png"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <li>
+                        Diríjase al apartado de wordpress y seleccione ajustes.
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/wp4.png"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <li>Accedemos al apartado de pagos</li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/w5.png"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <li>
+                        Activamos payments way como pasarela de transacciones y
+                        guardamos cambios, una vez guardados los cambios
+                        Acedemos al apartado de configuración.
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/wp6.png"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <li>
+                        Ubique en configuración el campo obligatorio ID MERCHANT
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/wp7.png"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <ul>
+                        <li>
+                            Ubique en la pasarela el campo obligatorio ID
+                            MERCHANT
+                        </li>
+                    </ul>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/id.png"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <li>
+                        Ubique en configuración el campo obligatorio ID TERMINAL
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/wp9.png"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <ul>
+                        <li>
+                            Ubique en la pasarela el campo obligatorio ID
+                            TERMINAL
+                        </li>
+                        <figure>
+                            <img
+                                loading="lazy"
+                                src="/assets/img/id.png"
+                                alt=""
+                                class="figure_documentation"
+                            />
+                        </figure>
+                    </ul>
+                    <li>
+                        Ubique en configuración el campo obligatorio ID BOTON DE
+                        PAGO
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/wp11.png"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <ul>
+                        <li>Ubique en la pasarela ID BOTON DE PAGO</li>
+                        <figure>
+                            <img
+                                loading="lazy"
+                                src="/assets/img/wp12.png"
+                                alt=""
+                                class="figure_documentation"
+                            />
+                        </figure>
+                    </ul>
+                    <li>Ubique en configuración el campo obligatorio APIKEY</li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/wp13.png"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <ul>
+                        <li>Ubique en la pasarela APIKEY</li>
+                        <figure>
+                            <img
+                                loading="lazy"
+                                src="/assets/img/wp14.png"
+                                alt=""
+                                class="figure_documentation"
+                            />
+                        </figure>
+                    </ul>
+                    <li>
+                        Ubique en configuración el campo obligatorio URL de
+                        retorno al ecommerce
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/wp15.png"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <li>Diríjase a su respectiva página de tienda.</li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/wp20.png"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <li>Nos fijamos en la Url de nuestra tienda.</li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/wp21.png"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <li>Copiamos la parte que finaliza la url.</li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/wp22.png"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <li>
+                        En el caso que la url en la tienda sea un poco más larga
+                        copiamos toda la parte final.
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/wp23.png"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <li>
+                        Por último, guardamos los cambios desde el administrador
+                        de wordpress
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/wp33.png"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                </ol>
+            </section>
+            <section class="documentation_itm none documentation_itm1">
+                <h3 class="documentation_itm-title">Introducción</h3>
+                <p>
+                    A continuación, usted encontrará una guía con el paso a paso
+                    de como Incluir el plugin PAYMENTS WAY MERCHANT con
+                    PrestaShop y lograr una integración satisfactoria con su
+                    Ecommerce. Ofrezca a sus clientes la posibilidad de generar
+                    pagos en línea de manera segura y confiable mediante la
+                    pasarela de pago PAYMENTS WAY MERCHANT. Para mas información
+                    puede consultar:
+
+                    <a
+                        class="informacion_ref-es"
+                        href="https://merchant.paymentsway.co/"
+                        >paymentsway.co/</a
+                    >
+                </p>
+                <h4 class="documentation_itm-subtitle">Moneda</h4>
+                <p>
+                    Para el correcto uso del plugin, usted debe utilizar una de
+                    las siguientes monedas: COP, USD y EUR.
+                </p>
+                <h4 class="documentation_itm-subtitle">Requisitos</h4>
+                <ul class="register_space1">
+                    <li>Acceso a cuenta paymemts way.</li>
+                    <li>Acceso a administrador PrestaShop.</li>
+                </ul>
+                <h4 class="documentation_itm-subtitle">Instalación</h4>
+                <ol class="register_space1">
+                    <li>Descargue el plugin PAYMENTS WAY MERCHANT.</li>
+                    <li>Añada el plugin al administrador de PrestaShop</li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/p1.jpg"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+
+                    <li>Suba el plugin, Instale y active.</li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/p2.jpg"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <li>
+                        Diríjase al apartado de PrestaShop y seleccione ajustes.
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/p3.jpg"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <li>
+                        Ubique en configuración el campo obligatorio ID MERCHANT
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/p4.jpg"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <ul>
+                        <li>
+                            UUbique en la pasarela el campo obligatorio ID
+                            MERCHAN
+                        </li>
+                    </ul>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/p5.png"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <li>
+                        Ubique en configuración el campo obligatorio ID
+                        TERMINAL.
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/p6.jpg"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <ul>
+                        <li>
+                            Ubique en la pasarela el campo obligatorio ID
+                            MERCHANT
+                        </li>
+                    </ul>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/p7.png"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <li>
+                        Ubique en configuración el campo obligatorio ID TERMINAL
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/p8.jpg"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <ul>
+                        <li>
+                            Ubique en la pasarela el campo obligatorio ID
+                            TERMINAL
+                        </li>
+                        <figure>
+                            <img
+                                loading="lazy"
+                                src="/assets/img/p9.png"
+                                alt=""
+                                class="figure_documentation"
+                            />
+                        </figure>
+                    </ul>
+                    <li>
+                        Ubique en configuración el campo obligatorio ID BOTON DE
+                        PAGO
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/p10.jpg"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <ul>
+                        <li>Ubique en la pasarela ID BOTON DE PAGO</li>
+                        <figure>
+                            <img
+                                loading="lazy"
+                                src="/assets/img/p11.png"
+                                alt=""
+                                class="figure_documentation"
+                            />
+                        </figure>
+                    </ul>
+                    <li>Ubique en configuración el campo obligatorio APIKEY</li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/p12.jpg"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <ul>
+                        <li>Ubique en la pasarela APIKEY</li>
+                        <figure>
+                            <img
+                                loading="lazy"
+                                src="/assets/img/p13.png"
+                                alt=""
+                                class="figure_documentation"
+                            />
+                        </figure>
+                    </ul>
+                    <li>
+                        Ubique en configuración el campo obligatorio URL de
+                        retorno al E-commerce.
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/p14.jpg"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <li>Diríjase a su respectiva página de tienda.</li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/p15.jpg"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <li>Nos fijamos en la Url de nuestra tienda.</li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/p16.jpg"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <li>
+                        Por último, guardamos los cambios desde el administrador
+                        de PrestaShop.
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/p17.jpg"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                </ol>
+            </section>
+
+            <!-- Widget modo de uso -->
+            <section
+                class="documentation_itm documentation_itm1 documentation_itm-position none"
+            >
+                <i class="fa-solid fa-arrow-left"></i>
+                <h3 class="documentation_itm-title">TARJETAS CRÉDITO/DEBITO</h3>
+                <ul class="register_space1">
+                    <li>
+                        Usted diligenciará la información que allí le será
+                        solicitada: Nombres y Apellidos, Tipo de Documento
+                        (Pasaporte, Cédula de ciudadanía, Cédula de extranjería
+                        o NIT) y para finalizar el número del documento
+                        anteriormente seleccionado.
+                    </li>
+                    <li>
+                        Una vez diligenciados los campos requeridos, dará clic
+                        en el botón “Continuar al Pago”.
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/9.png"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <li>
+                        Procediendo con el pago, usted deberá diligenciar los
+                        campos de: Nombre del titular de la tarjeta, Número de
+                        la tarjeta, Mes/Año y CVV (información la cual
+                        encontrará en su tarjeta).
+                    </li>
+                    <li>
+                        Una vez diligenciado los campos requeridos, dará clic en
+                        el botón “Continuar al Pago”.
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/10.png"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <li>
+                        Para finalizar, en la transacción le aparece una alerta
+                        indicando el estado con el cual quedo su proceso.
+                    </li>
+                    <li>
+                        Recuerde que existirán tres posibles estados de su
+                        transacción:
+                    </li>
+                    <ul class="register_space1">
+                        <li>Exitosa.</li>
+                        <li>Declinada.</li>
+                        <li>Rechazada.</li>
+                    </ul>
+                    <li>
+                        Una vez usted haya podido verificar el error de la
+                        transacción en los estados de Declinada y Rechazada,
+                        usted deberá dar Clic en el botón “Finalizar”.
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/11.png"
+                            alt=""
+                            class="figure_documentation"
+                            width="201px"
+                        />
+                    </figure>
+                    <li>
+                        En el estado de transacción Exitosa usted deberá solo
+                        dar por terminada la transacción dando Clic en el botón
+                        “Finalizar”.
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/12.jpg"
+                            alt=""
+                            class="figure_documentation"
+                            width="201px"
+                        />
+                    </figure>
+                </ul>
+            </section>
+            <!-- PSE -->
+            <section
+                class="documentation_itm documentation_itm1 documentation_itm-position none"
+            >
+                <i class="fa-solid fa-arrow-left"></i>
+                <h3 class="documentation_itm-title">PSE</h3>
+                <ul class="register_space1">
+                    <li>
+                        Usted diligenciará la información que allí se le
+                        solicita: Nombres y Apellidos, Tipo de Documento
+                        (Pasaporte, Cédula de ciudadanía, Cédula de extranjería
+                        y NIT) y para finalizar el número del documento
+                        anteriormente seleccionado.
+                    </li>
+                    <li>
+                        Una vez diligenciados los campos requeridos, dará clic
+                        en el botón “Continuar al Pago”.
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/13.png"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                    <li>
+                        Diligenciará los datos solicitados: Nombres y Apellidos,
+                        Tipo de documento y número de el documento ya
+                        seleccionado.
+                    </li>
+                    <li>
+                        Recuerde que los datos ingresados pueden ser recordados
+                        en futuras transacciones.
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/14.png"
+                            alt=""
+                            class="figure_documentation"
+                            width="201px"
+                        />
+                    </figure>
+                    <li>
+                        Diligenciará los datos solicitados: Número de celular,
+                        correo electrónico, dirección y por último seleccionará
+                        el banco con el cual realizará la transacción.
+                    </li>
+                    <li>
+                        Una vez diligenciados los campos requeridos, dará clic
+                        en el botón “Continuar al Pago”.
+                    </li>
+
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/15.png"
+                            alt=""
+                            class="figure_documentation"
+                            width="201px"
+                        />
+                    </figure>
+                    <li>
+                        Para finalizar usted será re direccionado a la
+                        plataforma de PSE para finalizar su pago.
+                    </li>
+                </ul>
+            </section>
+            <!-- Efectivo -->
+            <section
+                class="documentation_itm documentation_itm1 documentation_itm-position none"
+            >
+                <i class="fa-solid fa-arrow-left"></i>
+                <h3 class="documentation_itm-title">EFECTIVO</h3>
+                <ul class="register_space1">
+                    <li>
+                        Usted diligenciara los datos que le serán solicitados:
+                        Nombres y Apellidos, Tipo de Documento (Pasaporte,
+                        Cédula de ciudadanía, Cédula de extranjería y NIT) y
+                        para finalizar el número del documento anteriormente
+                        seleccionado.
+                    </li>
+                    <li>
+                        Una vez llenados los campos requeridos, dará clic en el
+                        botón “Continuar al Pago”.
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/16.png"
+                            alt=""
+                            class="figure_documentation"
+                            width="201px"
+                        />
+                    </figure>
+                    <li>
+                        Para continuar con el pago, llenara los datos: Correo,
+                        celular, dirección, descripción (podrá especificar el
+                        fin del pago a realizar) y seleccionara el medio por
+                        cual usted finalizara el pago.
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/17.png"
+                            alt=""
+                            class="figure_documentation"
+                            width="201px"
+                        />
+                    </figure>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/18.png"
+                            alt=""
+                            class="figure_documentation"
+                            width="201px"
+                        />
+                    </figure>
+                    <li>
+                        Para finalizar su pago exitosamente el Widget le
+                        entregará un Voucher en el cual estará la información
+                        específica del pago a realizar y la entidad con la cual
+                        se realizará el pago.
+                    </li>
+                    <figure>
+                        <img
+                            loading="lazy"
+                            src="/assets/img/19.png"
+                            alt=""
+                            class="figure_documentation"
+                        />
+                    </figure>
+                </ul>
+            </section>
+            <!-- Post reversar transacción -->
+            <section class="documentation_itm none documentation_itm1">
+                <h3 class="documentation_itm-title">
+                    <span class="method method_post">POST</span> Reversar
+                    Transaccion
+                </h3>
+                <pre class="code">
+&nbsp;http://rationalsoftware.ddns.net:3008/ClientAPI/ReversarTransaccion</pre
+                >
+                <p>
+                    idTransaction, Identificador de la transaccion de
+                    PaymentsWay, se obtiene al recibir la respuesta de "Crear
+                    Transaccion tarjeta de credito"
+                </p>
+                <h4 class="documentation_itm-subtitle">Headers</h4>
+                <p>
+                    Para consumir el servicio de "reversar transacción"
+                    necesitaremos en el
+                    <i class="code_style">&nbsp;&nbsp;header&nbsp;&nbsp;</i>
+                    de la petición su
+                    <i class="code_style">&nbsp;&nbsp;Api_key&nbsp;&nbsp; </i>
+                </p>
+                <h4 class="documentation_itm-subtitle">Parametrización</h4>
+                <!-- <table id="rt">
+                    <thead>
+                        <tr>
+                            <th><strong>Campo</strong></th>
+                            <th><strong>Tipo</strong></th>
+                            <th><strong>Descripción</strong></th>
+                            <th><strong>Requerido</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>amount</td>
+                            <td>integer</td>
+                            <td>Valor del pago</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>firstname</td>
+                            <td>string</td>
+                            <td>Nomres del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>lastname</td>
+                            <td>string</td>
+                            <td>Apellidos del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>card_identification</td>
+                            <td>string</td>
+                            <td>Identificacion del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>identification_type</td>
+                            <td>Integer</td>
+                            <td>Tipo de identificacion del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>card_holder</td>
+                            <td>string</td>
+                            <td>Nombre Completo como aparece en la TC</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>card_pan</td>
+                            <td>string</td>
+                            <td>Numero de la TC</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>card_pan</td>
+                            <td>string</td>
+                            <td>Numero de la TC sin espacios ni guiones</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>card_expiry_year</td>
+                            <td>string</td>
+                            <td>Año de expiracion de la TC</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>card_expiry_month</td>
+                            <td>string</td>
+                            <td>Mes de expiracion de la TC</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>card_cvv</td>
+                            <td>string</td>
+                            <td>CVV de la TC</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>url_ok</td>
+                            <td>string</td>
+                            <td>CVV de la TC</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td>url_ko</td>
+                            <td>string</td>
+                            <td>CVV de la TC</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td>description</td>
+                            <td>string</td>
+                            <td>Descripción brebe de la orden</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>installments</td>
+                            <td>integer</td>
+                            <td>Numero de Cuotas</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>external_order</td>
+                            <td>string</td>
+                            <td>Identificador unico del lado del comercio</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>dynamic_descriptor</td>
+                            <td>string</td>
+                            <td>Descripción brebe de la orden</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>terminal_id</td>
+                            <td>integer</td>
+                            <td>Id de la terminal</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>form_id</td>
+                            <td>integer</td>
+                            <td>Id del formulario</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>ip</td>
+                            <td>string</td>
+                            <td>Numero de IP del pagador</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>additionalData</td>
+                            <td>Object</td>
+                            <td>
+                                Objeto con informacion adicional que se
+                                retornara en el webhook
+                            </td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>autorizacionDatos</td>
+                            <td>boolean</td>
+                            <td>
+                                Indica si el pagador autoriza el uso de datos
+                                para tokenizar su tarjeta
+                            </td>
+                            <td>Si</td>
+                        </tr>
+                    </tbody>
+                </table> -->
+                <h4 class="documentation_itm-subtitle">
+                    Cuerpo de la peticion
+                </h4>
+                <p>
+                    Para consumir el servicio "reversar transacción" en el
+                    <i class="code_style">&nbsp;&nbsp;body&nbsp;&nbsp;</i> de la
+                    petición colocara el siguiente dato
+                </p>
+                <pre class="code">
+{
+        <span class="code_green">"idTransaction"</span> : <span class="code_red">1360</span>,
+}
+</pre>
+                <h4 class="documentation_itm-subtitle">
+                    Ejemplo de la petición
+                </h4>
+                <pre class="code">
+<span class="code_blue">var</span> myHeaders = <span class="code_blue"> new </span> Headers();
+myHeaders.<span class="code_yellow">append</span> (<span class="code_green">"Authorization"</span>, <span class="code_green">"Api_key"</span>);
+ 
+<span class="code_blue">var</span> cuerpo = {
+    <span class="code_green">"idTransaction"</span> : <span class="code_red">1360</span>,
+}
+
+<span class="code_blue">var</span>  requestOptions = {
+  method: <span class="code_green">'POST'</span>,
+  headers: myHeaders,
+  body: cuerpo
+  redirect: <span class="code_green">'follow'</span>
+};
+
+<span class="code_yellow">fetch</span>(<span class="code_green">"http://rationalsoftware.ddns.net:3008/ClientAPI/ReversarTransaccion"</span>, requestOptions)
+  <span class="code_yellow">.then</span>(response => response<span class="code_yellow">.text</span>())
+  <span class="code_yellow">.then</span>(result => console<span class="code_yellow">.log</span>(result))
+  <span class="code_yellow">.catch</span>(error => console<span class="code_yellow">.log</span>(<span class="code_green">'error'</span>, error));</pre>
+            </section>
+            <!-- <section class="documentation_itm documentation_itm2">
+                <h3 class="documentation_itm-title">Titulo</h3>
+                <h4 class="documentation_itm-subtitle">Subtitle</h4>
+                <p class="documentation_itm-text">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Voluptatum non vitae facere officiis delectus laboriosam
+                    praesentium labore! Aperiam ipsam, beatae corporis ratione
+                    dolores dolorem, optio ad, enim ipsum blanditiis expedita.
+                </p>
+                <div class="documentation_itm-line"></div>
+            </section> -->
+        </main>
+        <footer>
+            <section class="footer_line"></section>
+            <p class="footer_text">
+                Derechos reservados
+                <a href="https://paymentsway.co/"> PaymentsWay</a>
+            </p>
+            <section class="footer_icons">
+                <figure>
+                    <img
+                        loading="lazy"
+                        src="./assets/img/PCI.png"
+                        alt=""
+                        srcset=""
+                    />
+                </figure>
+                <figure>
+                    <img
+                        loading="lazy"
+                        src="./assets/img/SSL.png"
+                        alt=""
+                        srcset=""
+                    />
+                </figure>
+            </section>
+        </footer>
+    </body>
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.jqueryui.min.js"></script>
+    <script defer src="./script.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#formulario').DataTable({
+                responsive: true,
+            });
+            $('#ot').DataTable({
+                responsive: true,
+            });
+            $('#cttc').DataTable({
+                responsive: true,
+            });
+            $('#opd').DataTable({
+                responsive: true,
+            });
+            $('#ttc').DataTable({
+                responsive: true,
+            });
+            $('#ctp').DataTable({
+                responsive: true,
+            });
+            $('#ctc').DataTable({
+                responsive: true,
+            });
+            $('#formulario220').DataTable({
+                responsive: true,
+            });
+        });
+        $(document).ready(function () {
+            $('#formulario2').DataTable({
+                responsive: true,
+            });
+        });
+    </script>
+    <script
+        src="https://kit.fontawesome.com/3027b46027.js"
+        crossorigin="anonymous"
+    ></script>
+</html>
